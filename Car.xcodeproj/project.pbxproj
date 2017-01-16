@@ -14,6 +14,8 @@
 		F6E4DB2D1E2D0C9E00C5B84F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB2B1E2D0C9E00C5B84F /* LaunchScreen.storyboard */; };
 		F6E4DB381E2D0C9E00C5B84F /* CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB371E2D0C9E00C5B84F /* CarTests.swift */; };
 		F6E4DB431E2D0C9E00C5B84F /* CarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB421E2D0C9E00C5B84F /* CarUITests.swift */; };
+		F6E4DB521E2D0DE600C5B84F /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB511E2D0DE600C5B84F /* StoryboardInstantiatable.swift */; };
+		F6E4DB551E2D0E3700C5B84F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB541E2D0E3700C5B84F /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		F6E4DB3E1E2D0C9E00C5B84F /* CarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E4DB421E2D0C9E00C5B84F /* CarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarUITests.swift; sourceTree = "<group>"; };
 		F6E4DB441E2D0C9E00C5B84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6E4DB511E2D0DE600C5B84F /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
+		F6E4DB541E2D0E3700C5B84F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = ../UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		F6E4DB211E2D0C9E00C5B84F /* Car */ = {
 			isa = PBXGroup;
 			children = (
+				F6E4DB501E2D0DCD00C5B84F /* extensions */,
 				F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */,
 				F6E4DB241E2D0C9E00C5B84F /* ViewController.swift */,
 				F6E4DB261E2D0C9E00C5B84F /* Main.storyboard */,
@@ -123,6 +128,15 @@
 				F6E4DB441E2D0C9E00C5B84F /* Info.plist */,
 			);
 			path = CarUITests;
+			sourceTree = "<group>";
+		};
+		F6E4DB501E2D0DCD00C5B84F /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F6E4DB541E2D0E3700C5B84F /* UIViewController.swift */,
+				F6E4DB511E2D0DE600C5B84F /* StoryboardInstantiatable.swift */,
+			);
+			name = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +276,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E4DB521E2D0DE600C5B84F /* StoryboardInstantiatable.swift in Sources */,
 				F6E4DB251E2D0C9E00C5B84F /* ViewController.swift in Sources */,
+				F6E4DB551E2D0E3700C5B84F /* UIViewController.swift in Sources */,
 				F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
