@@ -12,13 +12,18 @@ final class TabViewController: UITabBarController, StoryboardInstantitable {
   override func viewDidLoad() {
     super.viewDidLoad()
     let viewControllers = [
-      UIColor.red,
-      .cyan,
-      ].map { color -> UIViewController in
-        let vc = UIViewController.init()
-        vc.view.backgroundColor = color
-        vc.title = "title"
-        return vc
+      UINavigationController.init(rootViewControllerType: PostListViewController.self, configuration: { (vc) in
+        vc.title = "ホーム"
+      })
+      ]
+      +
+      [
+        UIColor.red,
+        ].map { color -> UIViewController in
+          let vc = UIViewController.init()
+          vc.view.backgroundColor = color
+          vc.title = "アルバム"
+          return vc
     }
 
     setViewControllers(viewControllers, animated: true)

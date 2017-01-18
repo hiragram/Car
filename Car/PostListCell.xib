@@ -35,13 +35,13 @@
                             <constraint firstAttribute="width" constant="60" id="h6W-kb-741"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かなこ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lay-vw-nfu" userLabel="usernameLabel">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かなこ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lay-vw-nfu" userLabel="displayNameLabel">
                         <rect key="frame" x="76" y="266" width="291" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@kanako3300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-wP-CyB" userLabel="screennameLabel">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@kanako3300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-wP-CyB" userLabel="usernameLabel">
                         <rect key="frame" x="76" y="286" width="291" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,6 +81,14 @@
                     <constraint firstItem="Thz-JA-AFI" firstAttribute="leading" secondItem="VIg-wj-QmC" secondAttribute="trailing" constant="8" id="wzM-3U-0vm"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="bodyLabel" destination="rin-vU-HNT" id="M1v-1g-Mvy"/>
+                <outlet property="dateLabel" destination="Thz-JA-AFI" id="o1c-Oy-xpK"/>
+                <outlet property="displayNameLabel" destination="Lay-vw-nfu" id="auz-nB-Ai5"/>
+                <outlet property="photoImageView" destination="oBq-8j-zRr" id="DM0-qM-zWe"/>
+                <outlet property="userIconImageView" destination="VIg-wj-QmC" id="lSN-Z8-1Et"/>
+                <outlet property="usernameLabel" destination="qOF-wP-CyB" id="0s0-WT-2lR"/>
+            </connections>
             <point key="canvasLocation" x="180.5" y="-82.5"/>
         </tableViewCell>
     </objects>

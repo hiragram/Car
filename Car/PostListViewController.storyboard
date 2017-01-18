@@ -12,7 +12,7 @@
         <!--Post List View Controller-->
         <scene sceneID="CAm-t1-4b8">
             <objects>
-                <viewController id="zkB-fP-ozF" customClass="PostListViewController" sceneMemberID="viewController">
+                <viewController id="zkB-fP-ozF" customClass="PostListViewController" customModule="Car" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3JE-lj-1mA"/>
                         <viewControllerLayoutGuide type="bottom" id="HIW-iQ-GHc"/>
@@ -28,10 +28,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8Zz-6X-Jqw" firstAttribute="centerY" secondItem="CvI-KO-062" secondAttribute="centerY" id="1VY-y2-a2U"/>
-                            <constraint firstItem="8Zz-6X-Jqw" firstAttribute="height" secondItem="CvI-KO-062" secondAttribute="height" id="5lu-Dw-vE3"/>
-                            <constraint firstItem="8Zz-6X-Jqw" firstAttribute="width" secondItem="CvI-KO-062" secondAttribute="width" id="DIa-M3-Pdh"/>
-                            <constraint firstItem="8Zz-6X-Jqw" firstAttribute="centerX" secondItem="CvI-KO-062" secondAttribute="centerX" id="tjy-4K-4gm"/>
+                            <constraint firstItem="8Zz-6X-Jqw" firstAttribute="width" secondItem="CvI-KO-062" secondAttribute="width" id="VuY-wc-3GG"/>
+                            <constraint firstItem="8Zz-6X-Jqw" firstAttribute="centerX" secondItem="CvI-KO-062" secondAttribute="centerX" id="fEq-fP-yWb"/>
+                            <constraint firstItem="8Zz-6X-Jqw" firstAttribute="centerY" secondItem="CvI-KO-062" secondAttribute="centerY" id="xI6-8I-aTJ"/>
+                            <constraint firstItem="8Zz-6X-Jqw" firstAttribute="height" secondItem="CvI-KO-062" secondAttribute="height" id="xdW-PZ-hAW"/>
                         </constraints>
                     </view>
                     <connections>
