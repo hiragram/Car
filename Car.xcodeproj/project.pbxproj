@@ -22,6 +22,8 @@
 		F6E4DB641E2FD1C500C5B84F /* TabViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB631E2FD1C500C5B84F /* TabViewController.storyboard */; };
 		F6E4DB661E2FDBD900C5B84F /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB651E2FDBD900C5B84F /* PostListViewController.swift */; };
 		F6E4DB681E2FDBFF00C5B84F /* PostListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB671E2FDBFF00C5B84F /* PostListViewController.storyboard */; };
+		F6E4DB6A1E2FDDB500C5B84F /* PostListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB691E2FDDB500C5B84F /* PostListCell.xib */; };
+		F6E4DB6C1E2FDDBD00C5B84F /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB6B1E2FDDBD00C5B84F /* PostListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		F6E4DB631E2FD1C500C5B84F /* TabViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabViewController.storyboard; sourceTree = "<group>"; };
 		F6E4DB651E2FDBD900C5B84F /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		F6E4DB671E2FDBFF00C5B84F /* PostListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostListViewController.storyboard; sourceTree = "<group>"; };
+		F6E4DB691E2FDDB500C5B84F /* PostListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostListCell.xib; sourceTree = "<group>"; };
+		F6E4DB6B1E2FDDBD00C5B84F /* PostListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 				F6E4DB631E2FD1C500C5B84F /* TabViewController.storyboard */,
 				F6E4DB651E2FDBD900C5B84F /* PostListViewController.swift */,
 				F6E4DB671E2FDBFF00C5B84F /* PostListViewController.storyboard */,
+				F6E4DB6B1E2FDDBD00C5B84F /* PostListCell.swift */,
+				F6E4DB691E2FDDB500C5B84F /* PostListCell.xib */,
 			);
 			path = Car;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 			files = (
 				F6E4DB2D1E2D0C9E00C5B84F /* LaunchScreen.storyboard in Resources */,
 				F6E4DB681E2FDBFF00C5B84F /* PostListViewController.storyboard in Resources */,
+				F6E4DB6A1E2FDDB500C5B84F /* PostListCell.xib in Resources */,
 				F6E4DB2A1E2D0C9E00C5B84F /* Assets.xcassets in Resources */,
 				F6E4DB641E2FD1C500C5B84F /* TabViewController.storyboard in Resources */,
 			);
@@ -331,6 +338,7 @@
 				F6E4DB621E2FD1AB00C5B84F /* TabViewController.swift in Sources */,
 				F6E4DB521E2D0DE600C5B84F /* StoryboardInstantiatable.swift in Sources */,
 				F6E4DB551E2D0E3700C5B84F /* UIViewController.swift in Sources */,
+				F6E4DB6C1E2FDDBD00C5B84F /* PostListCell.swift in Sources */,
 				F6E4DB661E2FDBD900C5B84F /* PostListViewController.swift in Sources */,
 				F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */,
 			);
