@@ -20,6 +20,8 @@
 		F6E4DB5F1E2FD07D00C5B84F /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E4DB5A1E2FD07A00C5B84F /* RxTest.framework */; };
 		F6E4DB621E2FD1AB00C5B84F /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB611E2FD1AB00C5B84F /* TabViewController.swift */; };
 		F6E4DB641E2FD1C500C5B84F /* TabViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB631E2FD1C500C5B84F /* TabViewController.storyboard */; };
+		F6E4DB661E2FDBD900C5B84F /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB651E2FDBD900C5B84F /* PostListViewController.swift */; };
+		F6E4DB681E2FDBFF00C5B84F /* PostListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB671E2FDBFF00C5B84F /* PostListViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		F6E4DB5A1E2FD07A00C5B84F /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		F6E4DB611E2FD1AB00C5B84F /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		F6E4DB631E2FD1C500C5B84F /* TabViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabViewController.storyboard; sourceTree = "<group>"; };
+		F6E4DB651E2FDBD900C5B84F /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		F6E4DB671E2FDBFF00C5B84F /* PostListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostListViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 				F6E4DB2E1E2D0C9E00C5B84F /* Info.plist */,
 				F6E4DB611E2FD1AB00C5B84F /* TabViewController.swift */,
 				F6E4DB631E2FD1C500C5B84F /* TabViewController.storyboard */,
+				F6E4DB651E2FDBD900C5B84F /* PostListViewController.swift */,
+				F6E4DB671E2FDBFF00C5B84F /* PostListViewController.storyboard */,
 			);
 			path = Car;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6E4DB2D1E2D0C9E00C5B84F /* LaunchScreen.storyboard in Resources */,
+				F6E4DB681E2FDBFF00C5B84F /* PostListViewController.storyboard in Resources */,
 				F6E4DB2A1E2D0C9E00C5B84F /* Assets.xcassets in Resources */,
 				F6E4DB641E2FD1C500C5B84F /* TabViewController.storyboard in Resources */,
 			);
@@ -324,6 +331,7 @@
 				F6E4DB621E2FD1AB00C5B84F /* TabViewController.swift in Sources */,
 				F6E4DB521E2D0DE600C5B84F /* StoryboardInstantiatable.swift in Sources */,
 				F6E4DB551E2D0E3700C5B84F /* UIViewController.swift in Sources */,
+				F6E4DB661E2FDBD900C5B84F /* PostListViewController.swift in Sources */,
 				F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
