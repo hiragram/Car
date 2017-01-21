@@ -16,12 +16,12 @@ public struct TwitterRepository {
 
   private static let bag = DisposeBag.init()
 
-  static func fetch<T: Endpoint>(_ endpoint: T) {
-    Auth.client.take(1).subscribe(onNext: { (client) in
-      let endpointURL = RestAPI.baseURL + T.path
-      let request = client.urlRequest(withMethod: T.method.string, url: endpointURL, parameters: endpoint.params, error: nil)
+  static func fetch<T: Endpoint>(_ endpoint: T) -> Observable<T.Response.Data> {
+    return Observable<T.Response.Data>.create({ (observer) -> Disposable in
+      Auth.client.take(1).subscribe(onNext: { (client) in
+        let endpointURL = RestAPI.baseURL + T.path
+        let request = client.urlRequest(withMethod: T.method.string, url: endpointURL, parameters: endpoint.params, error: nil)
 
-      let observable = Observable<T.Response.Data>.create({ (observer) -> Disposable in
         client.sendTwitterRequest(request) { (response, data, error) in
           guard let response = response else {
             observer.onError(error!)
@@ -43,17 +43,17 @@ public struct TwitterRepository {
             observer.onError(error)
           }
         }
-        return Disposables.create()
-      })
-    }).addDisposableTo(bag)
+      }).addDisposableTo(bag)
+      return Disposables.create()
+    })
   }
 }
 
 // Observable interface
 
 public extension TwitterRepository {
-  public static func test() {
-    fetch(RestAPI.Search.init(query: "cat"))
+  public static func search(query: String) -> ObservablePaging<[PostEntity]> {
+    return ObservablePaging.single(fetch(RestAPI.Search.init(query: query)))
   }
 }
 

@@ -46,7 +46,7 @@ final class TabViewController: UITabBarController, StoryboardInstantiatable {
       case .notAuthorized:
         self.presentNavigation(viewControllerTypeToPresent: LoginViewController.self)
       case .authorized:
-        TwitterRepository.test()
+        break
       }
       }).addDisposableTo(bag)
   }
