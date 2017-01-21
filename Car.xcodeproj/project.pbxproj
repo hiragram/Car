@@ -40,6 +40,8 @@
 		8A7E6EB91E33D91800B9640F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EB81E33D91800B9640F /* Endpoint.swift */; };
 		8A7E6EBB1E33D9A600B9640F /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EBA1E33D9A600B9640F /* RestAPI.swift */; };
 		8A7E6EC11E33DB0700B9640F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EC01E33DB0700B9640F /* Response.swift */; };
+		8A7E6EC31E33FC5000B9640F /* JSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EC21E33FC5000B9640F /* JSONMappable.swift */; };
+		8A7E6EC51E33FF6300B9640F /* MediumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EC41E33FF6300B9640F /* MediumEntity.swift */; };
 		F60668561E33941200325D7B /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60668551E33941200325D7B /* RxOptional.framework */; };
 		F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */; };
 		F6E4DB2A1E2D0C9E00C5B84F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB291E2D0C9E00C5B84F /* Assets.xcassets */; };
@@ -173,6 +175,8 @@
 		8A7E6EB81E33D91800B9640F /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8A7E6EBA1E33D9A600B9640F /* RestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		8A7E6EC01E33DB0700B9640F /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		8A7E6EC21E33FC5000B9640F /* JSONMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONMappable.swift; sourceTree = "<group>"; };
+		8A7E6EC41E33FF6300B9640F /* MediumEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumEntity.swift; sourceTree = "<group>"; };
 		F60668551E33941200325D7B /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		F6E4DB1F1E2D0C9E00C5B84F /* Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -409,7 +413,9 @@
 				F6E4DB751E2FE1D000C5B84F /* Info.plist */,
 				F6E4DBA31E2FEF8000C5B84F /* PagedItems.swift */,
 				F6E4DB9B1E2FE6DA00C5B84F /* EntityProtocols.swift */,
+				8A7E6EC21E33FC5000B9640F /* JSONMappable.swift */,
 				F6E4DB901E2FE1DD00C5B84F /* PostEntity.swift */,
+				8A7E6EC41E33FF6300B9640F /* MediumEntity.swift */,
 				F6E4DB921E2FE26600C5B84F /* UserEntity.swift */,
 				8A442C341E33BC300021E1E6 /* ObservablePaging.swift */,
 				8A442C421E33C2F40021E1E6 /* Auth.swift */,
@@ -828,7 +834,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6E4DB911E2FE1DD00C5B84F /* PostEntity.swift in Sources */,
+				8A7E6EC31E33FC5000B9640F /* JSONMappable.swift in Sources */,
 				F6E4DB931E2FE26600C5B84F /* UserEntity.swift in Sources */,
+				8A7E6EC51E33FF6300B9640F /* MediumEntity.swift in Sources */,
 				8A442C351E33BC300021E1E6 /* ObservablePaging.swift in Sources */,
 				F6E4DBA41E2FEF8000C5B84F /* PagedItems.swift in Sources */,
 				F6E4DB9C1E2FE6DA00C5B84F /* EntityProtocols.swift in Sources */,

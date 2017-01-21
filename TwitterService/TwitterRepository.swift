@@ -21,24 +21,30 @@ public struct TwitterRepository {
       let endpointURL = RestAPI.baseURL + T.path
       let request = client.urlRequest(withMethod: T.method.string, url: endpointURL, parameters: endpoint.params, error: nil)
 
-      client.sendTwitterRequest(request) { (response, data, error) in
-        guard let response = response else {
-          print("Response is missing, error: \(error!)")
-          return
-        }
-        guard let data = data else {
-          print("Data is missing, error: \(error)")
-          return
-        }
-        do {
-          if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-            print(json)
+      let observable = Observable<T.Response.Data>.create({ (observer) -> Disposable in
+        client.sendTwitterRequest(request) { (response, data, error) in
+          guard let response = response else {
+            observer.onError(error!)
+            return
           }
-
-        } catch let error {
-          print(error)
+          guard let data = data else {
+            observer.onError(error!)
+            return
+          }
+          do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? T.JSONStructure {
+              let data = try T.mapping(jsonDict: json)
+              observer.onNext(data)
+              observer.onCompleted()
+            } else {
+              observer.onError(TwitterRepositoryError.castFailed)
+            }
+          } catch let error {
+            observer.onError(error)
+          }
         }
-      }
+        return Disposables.create()
+      })
     }).addDisposableTo(bag)
   }
 }
@@ -49,4 +55,8 @@ public extension TwitterRepository {
   public static func test() {
     fetch(RestAPI.Search.init(query: "cat"))
   }
+}
+
+public enum TwitterRepositoryError: Error {
+  case castFailed
 }

@@ -15,6 +15,7 @@ struct RestAPI {
 
   struct Search: Endpoint {
     typealias Response = ArrayResponse<PostEntity>
+    typealias JSONStructure = [String: Any]
     static var path = "/search/tweets.json"
     static var method = Method.get
 
@@ -24,6 +25,12 @@ struct RestAPI {
       params = [
         "q": query,
       ]
+    }
+
+    static func mapping(jsonDict: JSONStructure) throws -> Response.Data {
+      let response = try Response.init(jsonDict: try jsonDict.value(forKey: "statuses"))
+
+      return response.content
     }
   }
 }

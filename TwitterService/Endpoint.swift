@@ -10,11 +10,14 @@ import Foundation
 
 protocol Endpoint {
   associatedtype Response: ResponseDefinition
+  associatedtype JSONStructure
 
   static var path: String { get }
   static var method: Method { get }
 
   var params: [String: String] { get }
+
+  static func mapping(jsonDict: JSONStructure) throws -> Response.Data
 }
 
 enum Method: CustomStringConvertible {

@@ -7,15 +7,38 @@
 //
 
 import Foundation
+import Models
 
 public protocol ResponseDefinition {
   associatedtype Element
+  associatedtype Data
+  associatedtype ProcessableJSONStructure
+  var content: Data { get }
+  init(jsonDict: ProcessableJSONStructure) throws
 }
 
-struct SingleResponse<T>: ResponseDefinition {
+struct SingleResponse<T: JSONMappable>: ResponseDefinition {
   typealias Element = T
+  typealias Data = T
+  typealias ProcessableJSONStructure = [String: Any]
+
+  var content: Data
+
+  init(jsonDict: ProcessableJSONStructure) throws {
+    content = try T.init(jsonDict: jsonDict)
+  }
 }
 
-struct ArrayResponse<T>: ResponseDefinition {
-  typealias Element = [T]
+struct ArrayResponse<T: JSONMappable>: ResponseDefinition {
+  typealias Element = T
+  typealias Data = [T]
+  typealias ProcessableJSONStructure = [[String: Any]]
+
+  var content: Data
+
+  init(jsonDict: ProcessableJSONStructure) throws {
+    content = try jsonDict.map({ (singleElementDict) -> T in
+      return try T.init(jsonDict: singleElementDict)
+    })
+  }
 }
