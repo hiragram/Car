@@ -21,7 +21,7 @@ final class TabViewController: UITabBarController, StoryboardInstantiatable {
 
     let home = UINavigationController.init(rootViewControllerType: PostListViewController.self, configuration: { (vc) in
       vc.title = "ホーム"
-      vc.vm.value = PostListViewModel.init(postsObservable: debugObservable())
+      vc.vm.value = PostListViewModel.init(postsObservable: TwitterRepository.search(query: "おはよう"))
     })
 
     let grid = { _ -> UIViewController in
@@ -52,10 +52,11 @@ final class TabViewController: UITabBarController, StoryboardInstantiatable {
   }
 }
 
-private func debugObservable() -> Observable<[PostListViewModel.Item]> {
+private func debugObservable() -> ObservablePaging<[PostListViewModel.Item]> {
+
   let items = [1,2,3,4,5].map {
     PostListViewModel.Item.init(id: $0)
   }
 
-  return Observable.just(items)
+  return ObservablePaging.single(Observable.just(items))
 }
