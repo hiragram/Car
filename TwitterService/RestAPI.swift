@@ -9,14 +9,14 @@
 import Foundation
 import Models
 
-public struct RestAPI {
+struct RestAPI {
 
   static let baseURL = "https://api.twitter.com/1.1"
 
   struct Search: Endpoint {
     typealias Response = ArrayResponse<PostEntity>
-    static var path = "/search/tweets"
-    static var method = Method.post
+    static var path = "/search/tweets.json"
+    static var method = Method.get
 
     let params: [String: String]
 

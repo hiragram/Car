@@ -13,6 +13,8 @@ protocol Endpoint {
 
   static var path: String { get }
   static var method: Method { get }
+
+  var params: [String: String] { get }
 }
 
 enum Method: CustomStringConvertible {
