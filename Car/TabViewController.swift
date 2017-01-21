@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Models
+import TwitterService
+import TwitterKit // TODO 消す
 
 final class TabViewController: UITabBarController, StoryboardInstantiatable {
 
@@ -45,7 +47,9 @@ final class TabViewController: UITabBarController, StoryboardInstantiatable {
       case .notAuthorized:
         self.presentNavigation(viewControllerTypeToPresent: LoginViewController.self)
       case .authorized:
-        break
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3), execute: {
+          TwitterRepository.test()
+        })
       }
       }).addDisposableTo(bag)
   }

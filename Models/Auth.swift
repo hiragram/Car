@@ -28,7 +28,7 @@ public struct Auth {
       state = .authorized(token: token, tokenSecret: tokenSecret)
       Twitter.sharedInstance().sessionStore.saveSession(withAuthToken: token, authTokenSecret: tokenSecret, completion: { (session, error) in
         guard let session = session else {
-          fatalError(error!.localizedDescription)
+          fatalError(error?.localizedDescription ?? "")
         }
       })
     } else {

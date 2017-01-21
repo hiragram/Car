@@ -37,6 +37,9 @@
 		8A7E6EB51E33CDB100B9640F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C241E33B9B10021E1E6 /* TwitterKit.framework */; };
 		8A7E6EB61E33CDB100B9640F /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C261E33B9B10021E1E6 /* TwitterCore.framework */; };
 		8A7E6EB71E33CDDD00B9640F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8A442C251E33B9B10021E1E6 /* TwitterKitResources.bundle */; };
+		8A7E6EB91E33D91800B9640F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EB81E33D91800B9640F /* Endpoint.swift */; };
+		8A7E6EBB1E33D9A600B9640F /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EBA1E33D9A600B9640F /* RestAPI.swift */; };
+		8A7E6EC11E33DB0700B9640F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EC01E33DB0700B9640F /* Response.swift */; };
 		F60668561E33941200325D7B /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60668551E33941200325D7B /* RxOptional.framework */; };
 		F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */; };
 		F6E4DB2A1E2D0C9E00C5B84F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB291E2D0C9E00C5B84F /* Assets.xcassets */; };
@@ -167,6 +170,9 @@
 		8A442C421E33C2F40021E1E6 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		8A442C441E33C3B80021E1E6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8A442C461E33C3D50021E1E6 /* LoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		8A7E6EB81E33D91800B9640F /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		8A7E6EBA1E33D9A600B9640F /* RestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
+		8A7E6EC01E33DB0700B9640F /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		F60668551E33941200325D7B /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		F6E4DB1F1E2D0C9E00C5B84F /* Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -292,6 +298,9 @@
 				8A442C071E33B8D00021E1E6 /* TwitterService.h */,
 				8A442C081E33B8D00021E1E6 /* Info.plist */,
 				8A442C361E33BC990021E1E6 /* TwitterRepository.swift */,
+				8A7E6EB81E33D91800B9640F /* Endpoint.swift */,
+				8A7E6EC01E33DB0700B9640F /* Response.swift */,
+				8A7E6EBA1E33D9A600B9640F /* RestAPI.swift */,
 			);
 			path = TwitterService;
 			sourceTree = "<group>";
@@ -765,6 +774,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A7E6EC11E33DB0700B9640F /* Response.swift in Sources */,
+				8A7E6EBB1E33D9A600B9640F /* RestAPI.swift in Sources */,
+				8A7E6EB91E33D91800B9640F /* Endpoint.swift in Sources */,
 				8A442C371E33BC990021E1E6 /* TwitterRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

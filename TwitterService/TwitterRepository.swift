@@ -13,9 +13,42 @@ import Models
 import TwitterKit
 
 public struct TwitterRepository {
+
+  private static let client = TWTRAPIClient.init()
+
+  static func fetch<T: Endpoint>(_ endpoint: T) {
+    let endpointURL = RestAPI.baseURL + T.path
+    let request = { _ -> URLRequest in
+      var request = URLRequest.init(url: URL.init(string: endpointURL)!)
+      request.httpMethod = T.method.string
+      return request
+    }()
+
+    /*
+    client.sendTwitterRequest(request) { (response, data, error) in
+      guard let response = response else {
+        print("Response is missing, error: \(error!)")
+        return
+      }
+      guard let data = data else {
+        print("Data is missing, error: \(error)")
+        return
+      }
+      do {
+        let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+        print(json)
+      } catch let error {
+        print(error)
+      }
+    }
+ */
+  }
 }
 
 // Observable interface
 
 public extension TwitterRepository {
+  public static func test() {
+    fetch(RestAPI.Search.init(query: "cat"))
+  }
 }
