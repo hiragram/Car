@@ -9,8 +9,12 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Models
 
-final class TabViewController: UITabBarController, StoryboardInstantitable {
+final class TabViewController: UITabBarController, StoryboardInstantiatable {
+
+  private let bag = DisposeBag.init()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -29,9 +33,21 @@ final class TabViewController: UITabBarController, StoryboardInstantitable {
     let viewControllers = [
       home,
       grid,
-    ]
+      ]
 
     setViewControllers(viewControllers, animated: true)
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    Auth.stateObservable.subscribe(onNext: { [unowned self] (state) in
+      switch state {
+      case .notAuthorized:
+        self.presentNavigation(viewControllerTypeToPresent: LoginViewController.self)
+      case .authorized:
+        break
+      }
+      }).addDisposableTo(bag)
   }
 }
 

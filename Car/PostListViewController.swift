@@ -12,7 +12,7 @@ import RxCocoa
 import RxOptional
 import Models
 
-final class PostListViewController: UIViewController, StoryboardInstantitable {
+final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
   private let bag = DisposeBag.init()
 
