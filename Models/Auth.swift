@@ -26,6 +26,11 @@ public struct Auth {
     let state: State
     if let token = store.value(forKey: accessTokenKey) as? String, let tokenSecret = store.value(forKey: accessTokenSecretKey) as? String {
       state = .authorized(token: token, tokenSecret: tokenSecret)
+      Twitter.sharedInstance().sessionStore.saveSession(withAuthToken: token, authTokenSecret: tokenSecret, completion: { (session, error) in
+        guard let session = session else {
+          fatalError(error!.localizedDescription)
+        }
+      })
     } else {
       state = .notAuthorized
     }
