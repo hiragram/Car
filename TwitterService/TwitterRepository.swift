@@ -14,8 +14,6 @@ import TwitterKit
 
 public struct TwitterRepository {
 
-  private static let client = TWTRAPIClient.init()
-
   static func fetch<T: Endpoint>(_ endpoint: T) {
     let endpointURL = RestAPI.baseURL + T.path
     let request = { _ -> URLRequest in
@@ -24,8 +22,7 @@ public struct TwitterRepository {
       return request
     }()
 
-    /*
-    client.sendTwitterRequest(request) { (response, data, error) in
+    Auth.client!.sendTwitterRequest(request) { (response, data, error) in
       guard let response = response else {
         print("Response is missing, error: \(error!)")
         return
@@ -41,7 +38,8 @@ public struct TwitterRepository {
         print(error)
       }
     }
- */
+ 
+
   }
 }
 
