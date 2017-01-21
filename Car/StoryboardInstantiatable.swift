@@ -8,9 +8,9 @@
 
 import UIKit
 
-public protocol StoryboardInstantitable {}
+public protocol StoryboardInstantiatable {}
 
-public extension StoryboardInstantitable where Self: UIViewController {
+public extension StoryboardInstantiatable where Self: UIViewController {
   static var storyboardName: String {
     return String.init(describing: Self.self)
   }

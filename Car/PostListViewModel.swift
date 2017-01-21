@@ -13,34 +13,20 @@ import Models
 class PostListViewModel {
   typealias Item = PostEntity
 
-  private let posts: Observable<[Item]>
+  private let posts: ObservablePaging<[Item]>
   let itemContainer = PagedItems<Item>.init()
-
-  var fetch: AnyObserver<Void>!
 
   let bag = DisposeBag.init()
 
-  init(postsObservable: Observable<[Item]>) {
-    posts = postsObservable
+  var fetch: Observable<Void> {
+    return posts.observableFor(page: 1)
+      .do(onNext: { [weak self] (items) in
+        self?.itemContainer.set(items: items, forPage: 1)
+      })
+      .map { _ in () }
+  }
 
-    fetch = AnyObserver<Void>.init(eventHandler: { [weak self] (event) in
-      switch event {
-      case .next:
-        self?.posts.subscribe({ (event) in
-          switch event {
-          case .next(let items):
-            self?.itemContainer.set(items: items, forPage: 1)
-          case .error(let error):
-            fatalError(error.localizedDescription)
-          case .completed:
-            break
-          }
-        }).addDisposableTo(self!.bag)
-      case .error(let error):
-        fatalError(error.localizedDescription)
-      case .completed:
-        break
-      }
-    })
+  init(postsObservable: ObservablePaging<[Item]>) {
+    posts = postsObservable
   }
 }

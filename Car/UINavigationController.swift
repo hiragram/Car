@@ -9,7 +9,7 @@
 import UIKit
 
 extension UINavigationController {
-  convenience init<T: StoryboardInstantitable>(rootViewControllerType: T.Type, configuration: ((T) -> Void)? = nil) where T: UIViewController {
+  convenience init<T: StoryboardInstantiatable>(rootViewControllerType: T.Type, configuration: ((T) -> Void)? = nil) where T: UIViewController {
     let rootVC = T.instantiateFromStoryboard(configuration: configuration)
     self.init(rootViewController: rootVC)
   }

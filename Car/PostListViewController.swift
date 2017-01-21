@@ -12,7 +12,7 @@ import RxCocoa
 import RxOptional
 import Models
 
-final class PostListViewController: UIViewController, StoryboardInstantitable {
+final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
   private let bag = DisposeBag.init()
 
@@ -34,8 +34,10 @@ final class PostListViewController: UIViewController, StoryboardInstantitable {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    vm.asObservable().filterNil().subscribe(onNext: { (vm) in
-      Observable<Void>.just(()).bindTo(vm.fetch).addDisposableTo(vm.bag)
+    vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
+      vm.fetch.subscribe(onError: { (error) in
+        print(error)
+      }).addDisposableTo(self.bag)
     }).addDisposableTo(bag)
   }
 }

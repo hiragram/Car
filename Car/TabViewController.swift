@@ -9,14 +9,19 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Models
+import TwitterService
 
-final class TabViewController: UITabBarController, StoryboardInstantitable {
+final class TabViewController: UITabBarController, StoryboardInstantiatable {
+
+  private let bag = DisposeBag.init()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
     let home = UINavigationController.init(rootViewControllerType: PostListViewController.self, configuration: { (vc) in
       vc.title = "ホーム"
-      vc.vm.value = PostListViewModel.init(postsObservable: debugObservable())
+      vc.vm.value = PostListViewModel.init(postsObservable: TwitterRepository.search(query: "おはよう"))
     })
 
     let grid = { _ -> UIViewController in
@@ -29,16 +34,29 @@ final class TabViewController: UITabBarController, StoryboardInstantitable {
     let viewControllers = [
       home,
       grid,
-    ]
+      ]
 
     setViewControllers(viewControllers, animated: true)
   }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    Auth.stateObservable.subscribe(onNext: { [unowned self] (state) in
+      switch state {
+      case .notAuthorized:
+        self.presentNavigation(viewControllerTypeToPresent: LoginViewController.self)
+      case .authorized:
+        break
+      }
+      }).addDisposableTo(bag)
+  }
 }
 
-private func debugObservable() -> Observable<[PostListViewModel.Item]> {
+private func debugObservable() -> ObservablePaging<[PostListViewModel.Item]> {
+
   let items = [1,2,3,4,5].map {
     PostListViewModel.Item.init(id: $0)
   }
 
-  return Observable.just(items)
+  return ObservablePaging.single(Observable.just(items))
 }

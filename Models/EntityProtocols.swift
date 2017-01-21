@@ -11,3 +11,4 @@ import Foundation
 public protocol Identified {
   var id: Int { get }
 }
+
