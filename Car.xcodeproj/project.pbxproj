@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F60668561E33941200325D7B /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60668551E33941200325D7B /* RxOptional.framework */; };
 		F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */; };
 		F6E4DB2A1E2D0C9E00C5B84F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB291E2D0C9E00C5B84F /* Assets.xcassets */; };
 		F6E4DB2D1E2D0C9E00C5B84F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB2B1E2D0C9E00C5B84F /* LaunchScreen.storyboard */; };
@@ -94,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F60668551E33941200325D7B /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		F6E4DB1F1E2D0C9E00C5B84F /* Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6E4DB291E2D0C9E00C5B84F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60668561E33941200325D7B /* RxOptional.framework in Frameworks */,
 				F6E4DB871E2FE1D000C5B84F /* Models.framework in Frameworks */,
 				F6E4DB5C1E2FD07A00C5B84F /* RxCocoa.framework in Frameworks */,
 				F6E4DB5B1E2FD07A00C5B84F /* RxBlocking.framework in Frameworks */,
@@ -251,6 +254,7 @@
 		F6E4DB561E2FD06300C5B84F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F60668551E33941200325D7B /* RxOptional.framework */,
 				F6E4DB571E2FD07A00C5B84F /* RxBlocking.framework */,
 				F6E4DB581E2FD07A00C5B84F /* RxCocoa.framework */,
 				F6E4DB591E2FD07A00C5B84F /* RxSwift.framework */,
@@ -518,6 +522,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -920,6 +925,7 @@
 				F6E4DB491E2D0C9E00C5B84F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6E4DB4A1E2D0C9E00C5B84F /* Build configuration list for PBXNativeTarget "CarTests" */ = {
 			isa = XCConfigurationList;
@@ -928,6 +934,7 @@
 				F6E4DB4C1E2D0C9E00C5B84F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6E4DB4D1E2D0C9E00C5B84F /* Build configuration list for PBXNativeTarget "CarUITests" */ = {
 			isa = XCConfigurationList;
@@ -936,6 +943,7 @@
 				F6E4DB4F1E2D0C9E00C5B84F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6E4DB8A1E2FE1D000C5B84F /* Build configuration list for PBXNativeTarget "Models" */ = {
 			isa = XCConfigurationList;
@@ -944,6 +952,7 @@
 				F6E4DB8C1E2FE1D000C5B84F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6E4DB8D1E2FE1D000C5B84F /* Build configuration list for PBXNativeTarget "ModelsTests" */ = {
 			isa = XCConfigurationList;
@@ -952,6 +961,7 @@
 				F6E4DB8F1E2FE1D000C5B84F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

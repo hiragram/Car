@@ -18,7 +18,7 @@ class PostListViewModel {
 
   var fetch: AnyObserver<Void>!
 
-  private let bag = DisposeBag.init()
+  let bag = DisposeBag.init()
 
   init(postsObservable: Observable<[Item]>) {
     posts = postsObservable

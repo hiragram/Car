@@ -21,7 +21,6 @@ public extension StoryboardInstantitable where Self: UIViewController {
 
   static func instantiateFromStoryboard(configuration: ((Self) -> Void)? = nil) -> Self {
     let vc = storyboard.instantiateInitialViewController() as! Self
-    _ = vc.view
     configuration?(vc)
     return vc
   }
