@@ -31,8 +31,10 @@ public struct TwitterRepository {
           return
         }
         do {
-          let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-          print(json)
+          if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+            print(json)
+          }
+
         } catch let error {
           print(error)
         }
