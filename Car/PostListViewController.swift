@@ -29,7 +29,6 @@ final class PostListViewController: UIViewController, StoryboardInstantitable {
     }
   }
 
-  // vm must be initialized before viewDidLoad
   var vm = Variable<PostListViewModel?>.init(nil)
 
   override func viewDidLoad() {
