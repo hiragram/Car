@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxOptional
 import Fabric
 import TwitterKit
 
@@ -23,7 +24,9 @@ public struct Auth {
     case authorized(token: String, tokenSecret: String, userID: String)
   }
 
-  public static var client: TWTRAPIClient?
+  private static let _client = Variable<TWTRAPIClient?>.init(nil)
+
+  public static let client = _client.asObservable().filterNil()
 
   public static let state: Variable<State> = { _ -> Variable<State> in
     let state: State
@@ -33,7 +36,7 @@ public struct Auth {
         guard let session = session else {
           fatalError(error?.localizedDescription ?? "")
         }
-        client = TWTRAPIClient.init(userID: userID)
+        _client.value = TWTRAPIClient.init(userID: userID)
       })
     } else {
       state = .notAuthorized
