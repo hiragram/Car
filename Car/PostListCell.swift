@@ -19,8 +19,14 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
   }
   @IBOutlet private weak var userIconImageView: UIImageView! {
     didSet {
-      userIconImageView.layer.cornerRadius = userIconImageView.bounds.width / 2
+      userIconImageView.layer.cornerRadius = userIconImageView.bounds.width / 10
       userIconImageView.layer.masksToBounds = true
+    }
+  }
+  @IBOutlet private weak var retweetedUserIconImageView: UIImageView! {
+    didSet {
+      retweetedUserIconImageView.layer.cornerRadius = retweetedUserIconImageView.bounds.width / 10
+      retweetedUserIconImageView.layer.masksToBounds = true
     }
   }
   @IBOutlet private weak var displayNameLabel: UILabel!
@@ -28,14 +34,13 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
   @IBOutlet private weak var dateLabel: UILabel!
   @IBOutlet private weak var bodyLabel: UILabel!
 
-  @IBOutlet weak var imageHeight: NSLayoutConstraint!
+  @IBOutlet private weak var imageHeight: NSLayoutConstraint!
+  @IBOutlet private weak var userIconImageViewHeight: NSLayoutConstraint!
 
   typealias Entity = PostEntity
 
   func setup(entity: PostEntity) {
-    // TODO ダミーデータあててるから綺麗にする
     displayNameLabel.text = entity.user.displayName
-    usernameLabel.text = entity.user.username
     bodyLabel.text = entity.body
     userIconImageView.setImageWithFade(url: entity.user.imageURL)
     if let medium = entity.media.filter({ $0.type == .photo }).first {
@@ -43,6 +48,17 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       imageHeight.constant = 250
     } else {
       imageHeight.constant = 0
+    }
+
+    if let retweetingUser = entity.retweetingUser {
+      retweetedUserIconImageView.setImageWithFade(url: retweetingUser.imageURL)
+      retweetedUserIconImageView.isHidden = false
+      userIconImageViewHeight.constant = 50
+      usernameLabel.text = "@\(entity.user.username) (@\(retweetingUser.username)がリツイート)"
+    } else {
+      retweetedUserIconImageView.isHidden = true
+      userIconImageViewHeight.constant = 60
+      usernameLabel.text = "@\(entity.user.username)"
     }
 
     layoutIfNeeded()

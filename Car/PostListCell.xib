@@ -13,11 +13,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="360" id="6ei-vT-zso" customClass="PostListCell" customModule="Car" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="381" id="6ei-vT-zso" customClass="PostListCell" customModule="Car" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="381"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6ei-vT-zso" id="0fE-xZ-5Qn">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="380"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oBq-8j-zRr" userLabel="photoImageView">
@@ -34,49 +34,58 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かなこ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lay-vw-nfu" userLabel="displayNameLabel">
-                        <rect key="frame" x="76" y="266" width="291" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="76" y="266" width="291" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@kanako3300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-wP-CyB" userLabel="usernameLabel">
-                        <rect key="frame" x="76" y="286" width="291" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017/01/22 21:34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thz-JA-AFI" userLabel="dateLabel">
-                        <rect key="frame" x="76" y="311.5" width="291" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <rect key="frame" x="76" y="285" width="291" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テキストの本文テキストの本文テキストの本文" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rin-vU-HNT" userLabel="bodyLabel">
-                        <rect key="frame" x="8" y="334" width="359" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="8" y="334" width="359" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IBK-Fh-i2d" userLabel="retweetedUserIconImageView">
+                        <rect key="frame" x="38" y="296" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="IBK-Fh-i2d" secondAttribute="height" multiplier="1:1" id="Ckc-Jq-eWm"/>
+                            <constraint firstAttribute="width" constant="30" id="Yh8-SZ-i5n"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017/01/22 21:34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thz-JA-AFI" userLabel="dateLabel">
+                        <rect key="frame" x="8" y="359" width="359" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Lay-vw-nfu" firstAttribute="trailing" secondItem="oBq-8j-zRr" secondAttribute="trailing" id="7H4-WL-ZsX"/>
                     <constraint firstItem="qOF-wP-CyB" firstAttribute="top" secondItem="Lay-vw-nfu" secondAttribute="bottom" constant="2" id="9VZ-Tz-6x5"/>
+                    <constraint firstAttribute="bottom" secondItem="Thz-JA-AFI" secondAttribute="bottom" constant="7" id="AUK-W7-DY1"/>
                     <constraint firstItem="Lay-vw-nfu" firstAttribute="top" secondItem="oBq-8j-zRr" secondAttribute="bottom" constant="8" id="CRS-dC-4HC"/>
-                    <constraint firstItem="Thz-JA-AFI" firstAttribute="bottom" secondItem="VIg-wj-QmC" secondAttribute="bottom" id="CeP-vX-TfU"/>
+                    <constraint firstAttribute="trailing" secondItem="Thz-JA-AFI" secondAttribute="trailing" constant="8" id="HzR-YA-a4B"/>
                     <constraint firstItem="qOF-wP-CyB" firstAttribute="leading" secondItem="Lay-vw-nfu" secondAttribute="leading" id="NF7-ZI-lEh"/>
                     <constraint firstAttribute="leadingMargin" secondItem="oBq-8j-zRr" secondAttribute="leading" id="RJe-08-5Yk"/>
                     <constraint firstItem="qOF-wP-CyB" firstAttribute="trailing" secondItem="Lay-vw-nfu" secondAttribute="trailing" id="RxJ-xa-pM0"/>
+                    <constraint firstItem="Lay-vw-nfu" firstAttribute="leading" secondItem="IBK-Fh-i2d" secondAttribute="trailing" constant="8" id="Swt-a5-R7T"/>
                     <constraint firstItem="VIg-wj-QmC" firstAttribute="top" secondItem="oBq-8j-zRr" secondAttribute="bottom" constant="8" id="U88-Ud-cff"/>
+                    <constraint firstItem="rin-vU-HNT" firstAttribute="top" secondItem="IBK-Fh-i2d" secondAttribute="bottom" constant="8" id="UdZ-56-qes"/>
                     <constraint firstItem="rin-vU-HNT" firstAttribute="leading" secondItem="oBq-8j-zRr" secondAttribute="leading" id="Vjv-qr-naY"/>
-                    <constraint firstItem="Thz-JA-AFI" firstAttribute="trailing" secondItem="Lay-vw-nfu" secondAttribute="trailing" id="b9f-j0-Oqe"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="rin-vU-HNT" secondAttribute="bottom" id="exh-Fh-X3p"/>
+                    <constraint firstItem="VIg-wj-QmC" firstAttribute="top" secondItem="IBK-Fh-i2d" secondAttribute="top" constant="-30" id="ZhH-Dk-giT"/>
                     <constraint firstAttribute="topMargin" secondItem="oBq-8j-zRr" secondAttribute="top" id="fhL-hm-nwU"/>
+                    <constraint firstItem="Thz-JA-AFI" firstAttribute="top" secondItem="rin-vU-HNT" secondAttribute="bottom" constant="8" id="hwN-eY-goU"/>
                     <constraint firstAttribute="trailingMargin" secondItem="oBq-8j-zRr" secondAttribute="trailing" id="mKA-Ts-1Ho"/>
-                    <constraint firstItem="rin-vU-HNT" firstAttribute="top" secondItem="VIg-wj-QmC" secondAttribute="bottom" constant="8" id="mU8-Y8-pJd"/>
-                    <constraint firstItem="Lay-vw-nfu" firstAttribute="leading" secondItem="VIg-wj-QmC" secondAttribute="trailing" constant="8" id="oYF-hl-nTj"/>
                     <constraint firstItem="VIg-wj-QmC" firstAttribute="leading" secondItem="oBq-8j-zRr" secondAttribute="leading" id="qQ0-sg-Nys"/>
+                    <constraint firstItem="VIg-wj-QmC" firstAttribute="leading" secondItem="IBK-Fh-i2d" secondAttribute="leading" constant="-30" id="r9v-k6-e9o"/>
                     <constraint firstItem="rin-vU-HNT" firstAttribute="trailing" secondItem="oBq-8j-zRr" secondAttribute="trailing" id="wyk-5K-nug"/>
-                    <constraint firstItem="Thz-JA-AFI" firstAttribute="leading" secondItem="VIg-wj-QmC" secondAttribute="trailing" constant="8" id="wzM-3U-0vm"/>
+                    <constraint firstItem="Thz-JA-AFI" firstAttribute="leading" secondItem="0fE-xZ-5Qn" secondAttribute="leading" constant="8" id="x2Y-dQ-aVc"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -85,7 +94,9 @@
                 <outlet property="displayNameLabel" destination="Lay-vw-nfu" id="auz-nB-Ai5"/>
                 <outlet property="imageHeight" destination="sCa-5t-OXo" id="jzC-96-Fl8"/>
                 <outlet property="photoImageView" destination="oBq-8j-zRr" id="DM0-qM-zWe"/>
+                <outlet property="retweetedUserIconImageView" destination="IBK-Fh-i2d" id="VG0-TC-OXE"/>
                 <outlet property="userIconImageView" destination="VIg-wj-QmC" id="lSN-Z8-1Et"/>
+                <outlet property="userIconImageViewHeight" destination="h6W-kb-741" id="iv1-XL-I5E"/>
                 <outlet property="usernameLabel" destination="qOF-wP-CyB" id="0s0-WT-2lR"/>
             </connections>
             <point key="canvasLocation" x="180.5" y="-82.5"/>

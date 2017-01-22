@@ -14,6 +14,11 @@ public struct PostEntity: Identified, JSONMappable {
   public let date: Date
   public let body: String
   public let media: [MediumEntity]
+  public let retweetingUser: UserEntity?
+
+  public var postURL: URL {
+    return URL.init(string: "https://twitter.com/\(user.username)/status/\(id)")!
+  }
 
   // TODO 開発用だから将来消す
   public init(id: Int) {
@@ -22,13 +27,23 @@ public struct PostEntity: Identified, JSONMappable {
     date = Date.init()
     body = "hogehoge"
     media = []
+    retweetingUser = nil
   }
 
   public init(jsonDict: [String : Any]) throws {
+
+    if let originalPostDict = try? jsonDict.value(forKey: "retweeted_status") as [String: Any] {
+      let originalPost = try PostEntity.init(jsonDict: originalPostDict)
+      self.user = originalPost.user
+      self.retweetingUser = try UserEntity.init(jsonDict: try jsonDict.value(forKey: "user"))
+      self.body = originalPost.body
+    } else {
+      self.user = try UserEntity.init(jsonDict: try jsonDict.value(forKey: "user"))
+      self.retweetingUser = nil
+      self.body = try jsonDict.value(forKey: "text")
+    }
     self.id = try jsonDict.value(forKey: "id")
-    self.user = try UserEntity.init(jsonDict: try jsonDict.value(forKey: "user"))
     self.date = Date.init() // TODO stringからdateの変換つくる
-    self.body = try jsonDict.value(forKey: "text")
 
     let entityDict: [String: Any] = try jsonDict.value(forKey: "entities")
     let mediaDict: [[String: Any]] = (try? entityDict.value(forKey: "media")) ?? []

@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RxOptional
 import Models
+import SafariServices
 
 final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
@@ -25,6 +26,10 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
         vm.itemContainer.items.bindTo(self.tableView.rx.items(cellType: PostListCell.self)) { row, item, cell in
           cell.setup(entity: item)
           }.addDisposableTo(vm.bag)
+      }).addDisposableTo(bag)
+
+      tableView.rx.modelSelected(PostListViewModel.Item.self).subscribe(onNext: { [weak self] (item) in
+        self?.present(SFSafariViewController.init(url: item.postURL), animated: true, completion: nil)
       }).addDisposableTo(bag)
     }
   }
