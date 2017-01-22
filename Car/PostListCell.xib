@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,19 +17,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6ei-vT-zso" id="0fE-xZ-5Qn">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="359"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oBq-8j-zRr" userLabel="photoImageView">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oBq-8j-zRr" userLabel="photoImageView">
                         <rect key="frame" x="8" y="8" width="359" height="250"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="250" id="sCa-5t-OXo"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VIg-wj-QmC" userLabel="userIconImageView">
                         <rect key="frame" x="8" y="266" width="60" height="60"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="VIg-wj-QmC" secondAttribute="height" multiplier="1:1" id="Kmn-J1-H5D"/>
                             <constraint firstAttribute="width" constant="60" id="h6W-kb-741"/>
@@ -85,6 +83,7 @@
                 <outlet property="bodyLabel" destination="rin-vU-HNT" id="M1v-1g-Mvy"/>
                 <outlet property="dateLabel" destination="Thz-JA-AFI" id="o1c-Oy-xpK"/>
                 <outlet property="displayNameLabel" destination="Lay-vw-nfu" id="auz-nB-Ai5"/>
+                <outlet property="imageHeight" destination="sCa-5t-OXo" id="jzC-96-Fl8"/>
                 <outlet property="photoImageView" destination="oBq-8j-zRr" id="DM0-qM-zWe"/>
                 <outlet property="userIconImageView" destination="VIg-wj-QmC" id="lSN-Z8-1Et"/>
                 <outlet property="usernameLabel" destination="qOF-wP-CyB" id="0s0-WT-2lR"/>

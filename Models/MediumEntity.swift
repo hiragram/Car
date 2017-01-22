@@ -14,7 +14,7 @@ public struct MediumEntity: Identified, JSONMappable {
   public let url: URL
   public let type: MediumType
 
-  public enum MediumType {
+  public enum MediumType: Equatable {
     case photo
     case unsupported(typeName: String)
 
@@ -24,6 +24,24 @@ public struct MediumEntity: Identified, JSONMappable {
         self = .photo
       default:
         self = .unsupported(typeName: rawValue)
+      }
+    }
+
+    private var id: Int {
+      switch self {
+      case .photo:
+        return 1
+      case .unsupported:
+        return 0
+      }
+    }
+
+    public static func ==(lhs: MediumType, rhs: MediumType) -> Bool {
+      switch (lhs, rhs) {
+      case (.unsupported(typeName: let left), .unsupported(typeName: let right)):
+        return left == right
+      default:
+        return lhs.id == rhs.id
       }
     }
   }

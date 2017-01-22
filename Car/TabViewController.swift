@@ -21,7 +21,7 @@ final class TabViewController: UITabBarController, StoryboardInstantiatable {
 
     let home = UINavigationController.init(rootViewControllerType: PostListViewController.self, configuration: { (vc) in
       vc.title = "ホーム"
-      vc.vm.value = PostListViewModel.init(postsObservable: TwitterRepository.search(query: "おはよう"))
+      vc.vm.value = PostListViewModel.init(postsObservable: TwitterRepository.search(query: "#プリクラ filter:media", count: 100))
     })
 
     let grid = { _ -> UIViewController in

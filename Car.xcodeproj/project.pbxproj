@@ -42,6 +42,8 @@
 		8A7E6EC11E33DB0700B9640F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EC01E33DB0700B9640F /* Response.swift */; };
 		8A7E6EC31E33FC5000B9640F /* JSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EC21E33FC5000B9640F /* JSONMappable.swift */; };
 		8A7E6EC51E33FF6300B9640F /* MediumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EC41E33FF6300B9640F /* MediumEntity.swift */; };
+		8AB98E771E344F59004AE92D /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB98E761E344F59004AE92D /* WebImage.framework */; };
+		8AB98E791E344F9B004AE92D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB98E781E344F9B004AE92D /* UIImageView.swift */; };
 		F60668561E33941200325D7B /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60668551E33941200325D7B /* RxOptional.framework */; };
 		F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */; };
 		F6E4DB2A1E2D0C9E00C5B84F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6E4DB291E2D0C9E00C5B84F /* Assets.xcassets */; };
@@ -177,6 +179,8 @@
 		8A7E6EC01E33DB0700B9640F /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8A7E6EC21E33FC5000B9640F /* JSONMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONMappable.swift; sourceTree = "<group>"; };
 		8A7E6EC41E33FF6300B9640F /* MediumEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumEntity.swift; sourceTree = "<group>"; };
+		8AB98E761E344F59004AE92D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
+		8AB98E781E344F9B004AE92D /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		F60668551E33941200325D7B /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
 		F6E4DB1F1E2D0C9E00C5B84F /* Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Car.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A442C271E33B9B10021E1E6 /* Fabric.framework in Frameworks */,
+				8AB98E771E344F59004AE92D /* WebImage.framework in Frameworks */,
 				F60668561E33941200325D7B /* RxOptional.framework in Frameworks */,
 				F6E4DB871E2FE1D000C5B84F /* Models.framework in Frameworks */,
 				8A442C291E33B9B10021E1E6 /* TwitterKit.framework in Frameworks */,
@@ -382,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				F6E4DB541E2D0E3700C5B84F /* UIViewController.swift */,
+				8AB98E781E344F9B004AE92D /* UIImageView.swift */,
 				F6E4DBA51E2FF7FE00C5B84F /* UINavigationController.swift */,
 				F6E4DB511E2D0DE600C5B84F /* StoryboardInstantiatable.swift */,
 				F6E4DB941E2FE33800C5B84F /* EntityDisplayable.swift */,
@@ -393,6 +399,7 @@
 		F6E4DB561E2FD06300C5B84F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AB98E761E344F59004AE92D /* WebImage.framework */,
 				8A442C231E33B9B10021E1E6 /* Fabric.framework */,
 				8A442C241E33B9B10021E1E6 /* TwitterKit.framework */,
 				8A442C251E33B9B10021E1E6 /* TwitterKitResources.bundle */,
@@ -765,6 +772,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -803,6 +811,7 @@
 				F6E4DBA61E2FF7FE00C5B84F /* UINavigationController.swift in Sources */,
 				F6E4DB621E2FD1AB00C5B84F /* TabViewController.swift in Sources */,
 				F6E4DB521E2D0DE600C5B84F /* StoryboardInstantiatable.swift in Sources */,
+				8AB98E791E344F9B004AE92D /* UIImageView.swift in Sources */,
 				F6E4DB551E2D0E3700C5B84F /* UIViewController.swift in Sources */,
 				F6E4DB6C1E2FDDBD00C5B84F /* PostListCell.swift in Sources */,
 				F6E4DBA21E2FED9600C5B84F /* UITableView.swift in Sources */,

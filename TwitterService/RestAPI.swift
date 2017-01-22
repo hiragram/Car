@@ -21,9 +21,10 @@ struct RestAPI {
 
     let params: [String: String]
 
-    init(query: String) {
+    init(query: String, count: Int) {
       params = [
-        "q": query,
+        "q": query.urlEncoded!,
+        "count": "\(count)",
       ]
     }
 
@@ -32,5 +33,11 @@ struct RestAPI {
 
       return response.content
     }
+  }
+}
+
+private extension String {
+  var urlEncoded: String? {
+    return addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
   }
 }

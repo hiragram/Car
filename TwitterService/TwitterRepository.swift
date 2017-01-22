@@ -52,8 +52,8 @@ public struct TwitterRepository {
 // Observable interface
 
 public extension TwitterRepository {
-  public static func search(query: String) -> ObservablePaging<[PostEntity]> {
-    return ObservablePaging.single(fetch(RestAPI.Search.init(query: query)))
+  public static func search(query: String, count: Int = 15) -> ObservablePaging<[PostEntity]> {
+    return ObservablePaging.single(fetch(RestAPI.Search.init(query: query, count: count)))
   }
 }
 
