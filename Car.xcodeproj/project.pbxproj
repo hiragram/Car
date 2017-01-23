@@ -33,6 +33,8 @@
 		8A442C431E33C2F40021E1E6 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A442C421E33C2F40021E1E6 /* Auth.swift */; };
 		8A442C451E33C3B80021E1E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A442C441E33C3B80021E1E6 /* LoginViewController.swift */; };
 		8A442C471E33C3D50021E1E6 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A442C461E33C3D50021E1E6 /* LoginViewController.storyboard */; };
+		8A5D89AB1E366A3300DB4EDB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D89AA1E366A3300DB4EDB /* Date.swift */; };
+		8A5D89AD1E366D9400DB4EDB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D89AC1E366D9400DB4EDB /* Date.swift */; };
 		8A7E6EB41E33CDB100B9640F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C231E33B9B10021E1E6 /* Fabric.framework */; };
 		8A7E6EB51E33CDB100B9640F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C241E33B9B10021E1E6 /* TwitterKit.framework */; };
 		8A7E6EB61E33CDB100B9640F /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C261E33B9B10021E1E6 /* TwitterCore.framework */; };
@@ -174,6 +176,8 @@
 		8A442C421E33C2F40021E1E6 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		8A442C441E33C3B80021E1E6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8A442C461E33C3D50021E1E6 /* LoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		8A5D89AA1E366A3300DB4EDB /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		8A5D89AC1E366D9400DB4EDB /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		8A7E6EB81E33D91800B9640F /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8A7E6EBA1E33D9A600B9640F /* RestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		8A7E6EC01E33DB0700B9640F /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -323,6 +327,14 @@
 			path = TwitterServiceTests;
 			sourceTree = "<group>";
 		};
+		8A5D89A91E366A2A00DB4EDB /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8A5D89AA1E366A3300DB4EDB /* Date.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
 		F6E4DB161E2D0C9D00C5B84F = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +404,7 @@
 				F6E4DB511E2D0DE600C5B84F /* StoryboardInstantiatable.swift */,
 				F6E4DB941E2FE33800C5B84F /* EntityDisplayable.swift */,
 				F6E4DBA11E2FED9600C5B84F /* UITableView.swift */,
+				8A5D89AC1E366D9400DB4EDB /* Date.swift */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -416,6 +429,7 @@
 		F6E4DB731E2FE1D000C5B84F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8A5D89A91E366A2A00DB4EDB /* extensions */,
 				F6E4DB741E2FE1D000C5B84F /* Models.h */,
 				F6E4DB751E2FE1D000C5B84F /* Info.plist */,
 				F6E4DBA31E2FEF8000C5B84F /* PagedItems.swift */,
@@ -818,6 +832,7 @@
 				F6E4DB661E2FDBD900C5B84F /* PostListViewController.swift in Sources */,
 				F6E4DB951E2FE33800C5B84F /* EntityDisplayable.swift in Sources */,
 				F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */,
+				8A5D89AD1E366D9400DB4EDB /* Date.swift in Sources */,
 				8A442C451E33C3B80021E1E6 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -849,6 +864,7 @@
 				8A442C351E33BC300021E1E6 /* ObservablePaging.swift in Sources */,
 				F6E4DBA41E2FEF8000C5B84F /* PagedItems.swift in Sources */,
 				F6E4DB9C1E2FE6DA00C5B84F /* EntityProtocols.swift in Sources */,
+				8A5D89AB1E366A3300DB4EDB /* Date.swift in Sources */,
 				8A442C431E33C2F40021E1E6 /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

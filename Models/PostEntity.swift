@@ -43,7 +43,7 @@ public struct PostEntity: Identified, JSONMappable {
       self.body = try jsonDict.value(forKey: "text")
     }
     self.id = try jsonDict.value(forKey: "id")
-    self.date = Date.init() // TODO stringからdateの変換つくる
+    self.date = Date.init(twitterDateString: try jsonDict.value(forKey: "created_at"))!
 
     let entityDict: [String: Any] = try jsonDict.value(forKey: "entities")
     let mediaDict: [[String: Any]] = (try? entityDict.value(forKey: "media")) ?? []

@@ -33,6 +33,8 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
   @IBOutlet private weak var usernameLabel: UILabel!
   @IBOutlet private weak var dateLabel: UILabel!
   @IBOutlet private weak var bodyLabel: UILabel!
+  @IBOutlet private weak var followCountLabel: UILabel!
+  @IBOutlet private weak var followerCountLabel: UILabel!
 
   @IBOutlet private weak var imageHeight: NSLayoutConstraint!
   @IBOutlet private weak var userIconImageViewHeight: NSLayoutConstraint!
@@ -60,6 +62,11 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       userIconImageViewHeight.constant = 60
       usernameLabel.text = "@\(entity.user.username)"
     }
+
+    followCountLabel.text = "\(entity.user.followCount)"
+    followerCountLabel.text = "\(entity.user.followerCount)"
+
+    dateLabel.text = entity.date.displayText
 
     layoutIfNeeded()
   }
