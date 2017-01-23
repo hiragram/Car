@@ -53,11 +53,5 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    vm.asObservable().filterNil().take(1).subscribe(onNext: { [unowned self] (vm) in
-      vm.fetch.subscribe(onError: { (error) in
-        print(error)
-      }).addDisposableTo(self.bag)
-    }).addDisposableTo(bag)
   }
 }

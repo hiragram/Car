@@ -19,20 +19,24 @@ final class TabViewController: UITabBarController, StoryboardInstantiatable {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let home = UINavigationController.init(rootViewControllerType: PostListViewController.self, configuration: { (vc) in
+    let commonViewModel = PostListViewModel.init(postsObservable: TwitterRepository.search(query: "#裏垢女子 filter:twimg", count: 100))
+
+    commonViewModel.fetch.subscribe(onError: { (error) in
+      print(error)
+    }).addDisposableTo(self.bag)
+
+    let table = UINavigationController.init(rootViewControllerType: PostListViewController.self, configuration: { (vc) in
       vc.title = "ホーム"
-      vc.vm.value = PostListViewModel.init(postsObservable: TwitterRepository.search(query: "#裏垢女子 filter:twimg", count: 100))
+      vc.vm.value = commonViewModel
     })
 
-    let grid = { _ -> UIViewController in
-      let vc = UIViewController.init()
-      vc.title = "アルバム"
-      vc.view.backgroundColor = UIColor.cyan
-      return vc
-    }()
+    let grid = UINavigationController.init(rootViewControllerType: PostCollectionViewController.self) { (vc) in
+      vc.title = "写真一覧"
+      vc.vm.value = commonViewModel
+    }
 
     let viewControllers = [
-      home,
+      table,
       grid,
       ]
 
