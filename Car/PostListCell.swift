@@ -13,7 +13,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
   @IBOutlet private weak var photoImageView: UIImageView! {
     didSet {
-      photoImageView.layer.cornerRadius = 10
+      photoImageView.layer.cornerRadius = 5
       photoImageView.layer.masksToBounds = true
     }
   }
