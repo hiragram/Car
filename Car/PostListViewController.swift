@@ -38,12 +38,23 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
     }
   }
 
+  @IBOutlet private weak var refreshControl: UIRefreshControl! {
+    didSet {
+      vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
+        self.refreshControl.rx.controlEvent(.valueChanged).flatMap {
+          vm.fetch
+        }.subscribe().addDisposableTo(vm.bag)
+        vm.isLoading.bindTo(self.refreshControl.rx.isRefreshing).addDisposableTo(vm.bag)
+      }).addDisposableTo(bag)
+    }
+  }
+
   var vm = Variable<PostListViewModel?>.init(nil)
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
+    vm.asObservable().filterNil().take(1).subscribe(onNext: { [unowned self] (vm) in
       vm.fetch.subscribe(onError: { (error) in
         print(error)
       }).addDisposableTo(self.bag)
