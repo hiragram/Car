@@ -24,6 +24,14 @@ class PostCollectionViewController: UIViewController, StoryboardInstantiatable {
         vm.itemContainer.items.bindTo(self.collectionView.rx.items(cellType: PostCollectionViewCell.self)) { number, item, cell in
           cell.setup(entity: item)
         }.addDisposableTo(vm.bag)
+
+        let refreshControl = UIRefreshControl.init()
+        refreshControl.rx.controlEvent(.valueChanged).flatMap {
+          vm.fetch
+          }.subscribe().addDisposableTo(vm.bag)
+        vm.isLoading.bindTo(refreshControl.rx.isRefreshing).addDisposableTo(vm.bag)
+        self.collectionView.refreshControl = refreshControl
+
       }).addDisposableTo(bag)
 
       collectionView.delegate = self
