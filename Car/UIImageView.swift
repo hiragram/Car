@@ -20,7 +20,7 @@ extension UIImageView {
       case .none:
         self?.alpha = 0
         self?.image = image
-        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
           self?.alpha = 1
         }, completion: nil)
       default:
