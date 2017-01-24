@@ -35,6 +35,11 @@
 		8A442C471E33C3D50021E1E6 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A442C461E33C3D50021E1E6 /* LoginViewController.storyboard */; };
 		8A5D89AB1E366A3300DB4EDB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D89AA1E366A3300DB4EDB /* Date.swift */; };
 		8A5D89AD1E366D9400DB4EDB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D89AC1E366D9400DB4EDB /* Date.swift */; };
+		8A5D89AF1E3675A200DB4EDB /* PostCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D89AE1E3675A200DB4EDB /* PostCollectionViewController.swift */; };
+		8A5D89B11E3675C600DB4EDB /* PostCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D89B01E3675C600DB4EDB /* PostCollectionViewController.storyboard */; };
+		8A5D89B31E36776600DB4EDB /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D89B21E36776600DB4EDB /* PostCollectionViewCell.xib */; };
+		8A5D89B51E3677CF00DB4EDB /* PostCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D89B41E3677CF00DB4EDB /* PostCollectionCell.swift */; };
+		8A5D89B71E36791600DB4EDB /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D89B61E36791600DB4EDB /* UICollectionView.swift */; };
 		8A7E6EB41E33CDB100B9640F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C231E33B9B10021E1E6 /* Fabric.framework */; };
 		8A7E6EB51E33CDB100B9640F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C241E33B9B10021E1E6 /* TwitterKit.framework */; };
 		8A7E6EB61E33CDB100B9640F /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C261E33B9B10021E1E6 /* TwitterCore.framework */; };
@@ -178,6 +183,11 @@
 		8A442C461E33C3D50021E1E6 /* LoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		8A5D89AA1E366A3300DB4EDB /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		8A5D89AC1E366D9400DB4EDB /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		8A5D89AE1E3675A200DB4EDB /* PostCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCollectionViewController.swift; sourceTree = "<group>"; };
+		8A5D89B01E3675C600DB4EDB /* PostCollectionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostCollectionViewController.storyboard; sourceTree = "<group>"; };
+		8A5D89B21E36776600DB4EDB /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
+		8A5D89B41E3677CF00DB4EDB /* PostCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCollectionCell.swift; sourceTree = "<group>"; };
+		8A5D89B61E36791600DB4EDB /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		8A7E6EB81E33D91800B9640F /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8A7E6EBA1E33D9A600B9640F /* RestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		8A7E6EC01E33DB0700B9640F /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -404,6 +414,7 @@
 				F6E4DB511E2D0DE600C5B84F /* StoryboardInstantiatable.swift */,
 				F6E4DB941E2FE33800C5B84F /* EntityDisplayable.swift */,
 				F6E4DBA11E2FED9600C5B84F /* UITableView.swift */,
+				8A5D89B61E36791600DB4EDB /* UICollectionView.swift */,
 				8A5D89AC1E366D9400DB4EDB /* Date.swift */,
 			);
 			name = extensions;
@@ -458,7 +469,11 @@
 			children = (
 				F6E4DB611E2FD1AB00C5B84F /* TabViewController.swift */,
 				F6E4DB631E2FD1C500C5B84F /* TabViewController.storyboard */,
+				8A5D89AE1E3675A200DB4EDB /* PostCollectionViewController.swift */,
+				8A5D89B01E3675C600DB4EDB /* PostCollectionViewController.storyboard */,
 				F6E4DB651E2FDBD900C5B84F /* PostListViewController.swift */,
+				8A5D89B21E36776600DB4EDB /* PostCollectionViewCell.xib */,
+				8A5D89B41E3677CF00DB4EDB /* PostCollectionCell.swift */,
 				F6E4DB961E2FE54E00C5B84F /* PostListViewModel.swift */,
 				F6E4DB671E2FDBFF00C5B84F /* PostListViewController.storyboard */,
 				F6E4DB6B1E2FDDBD00C5B84F /* PostListCell.swift */,
@@ -725,8 +740,10 @@
 				F6E4DB6A1E2FDDB500C5B84F /* PostListCell.xib in Resources */,
 				F6E4DB2A1E2D0C9E00C5B84F /* Assets.xcassets in Resources */,
 				8A442C2B1E33B9B10021E1E6 /* TwitterKitResources.bundle in Resources */,
+				8A5D89B31E36776600DB4EDB /* PostCollectionViewCell.xib in Resources */,
 				8A442C471E33C3D50021E1E6 /* LoginViewController.storyboard in Resources */,
 				F6E4DB641E2FD1C500C5B84F /* TabViewController.storyboard in Resources */,
+				8A5D89B11E3675C600DB4EDB /* PostCollectionViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,7 +842,9 @@
 				F6E4DBA61E2FF7FE00C5B84F /* UINavigationController.swift in Sources */,
 				F6E4DB621E2FD1AB00C5B84F /* TabViewController.swift in Sources */,
 				F6E4DB521E2D0DE600C5B84F /* StoryboardInstantiatable.swift in Sources */,
+				8A5D89AF1E3675A200DB4EDB /* PostCollectionViewController.swift in Sources */,
 				8AB98E791E344F9B004AE92D /* UIImageView.swift in Sources */,
+				8A5D89B71E36791600DB4EDB /* UICollectionView.swift in Sources */,
 				F6E4DB551E2D0E3700C5B84F /* UIViewController.swift in Sources */,
 				F6E4DB6C1E2FDDBD00C5B84F /* PostListCell.swift in Sources */,
 				F6E4DBA21E2FED9600C5B84F /* UITableView.swift in Sources */,
@@ -834,6 +853,7 @@
 				F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */,
 				8A5D89AD1E366D9400DB4EDB /* Date.swift in Sources */,
 				8A442C451E33C3B80021E1E6 /* LoginViewController.swift in Sources */,
+				8A5D89B51E3677CF00DB4EDB /* PostCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
