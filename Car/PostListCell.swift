@@ -102,88 +102,56 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
     switch media.count {
     case 0:
-      photoAWidth.priority = UILayoutPriorityDefaultLow
-      photoAHeight.priority = UILayoutPriorityDefaultLow
       photoAWidth.constant = fullWidth
       photoAHeight.constant = 0
 
-      photoBWidth.priority = UILayoutPriorityDefaultHigh
-      photoBHeight.priority = UILayoutPriorityDefaultHigh
       photoBWidth.constant = 0
       photoBHeight.constant = 0
 
-      photoCWidth.priority = UILayoutPriorityDefaultHigh
-      photoCHeight.priority = UILayoutPriorityDefaultHigh
       photoCWidth.constant = fullWidth
       photoCHeight.constant = 0
 
-      photoDWidth.priority = UILayoutPriorityDefaultHigh
-      photoDHeight.priority = UILayoutPriorityDefaultHigh
       photoDWidth.constant = 0
       photoDHeight.constant = 0
     case 1: // Use photoA
-      photoAWidth.priority = UILayoutPriorityDefaultLow
-      photoAHeight.priority = UILayoutPriorityDefaultLow
       photoAWidth.constant = fullWidth
       photoAHeight.constant = fullHeight
 
-      photoBWidth.priority = UILayoutPriorityDefaultHigh
-      photoBHeight.priority = UILayoutPriorityDefaultHigh
       photoBWidth.constant = 0
       photoBHeight.constant = 0
 
-      photoCWidth.priority = UILayoutPriorityDefaultHigh
-      photoCHeight.priority = UILayoutPriorityDefaultHigh
       photoCWidth.constant = fullWidth
       photoCHeight.constant = 0
 
-      photoDWidth.priority = UILayoutPriorityDefaultHigh
-      photoDHeight.priority = UILayoutPriorityDefaultHigh
       photoDWidth.constant = 0
       photoDHeight.constant = 0
 
       photoA.setImageWithFade(url: media[0].url)
     case 2: // Use photoA, B
-      photoAWidth.priority = UILayoutPriorityDefaultHigh
-      photoAHeight.priority = UILayoutPriorityDefaultHigh
       photoAWidth.constant = halfWidth
       photoAHeight.constant = fullHeight
 
-      photoBWidth.priority = UILayoutPriorityDefaultHigh
-      photoBHeight.priority = UILayoutPriorityDefaultHigh
       photoBWidth.constant = halfWidth
       photoBHeight.constant = fullHeight
 
-      photoCWidth.priority = UILayoutPriorityDefaultHigh
-      photoCHeight.priority = UILayoutPriorityDefaultHigh
       photoCWidth.constant = halfWidth
       photoCHeight.constant = 0
 
-      photoDWidth.priority = UILayoutPriorityDefaultHigh
-      photoDHeight.priority = UILayoutPriorityDefaultHigh
       photoDWidth.constant = halfWidth
       photoDHeight.constant = 0
 
       photoA.setImageWithFade(url: media[0].url)
       photoB.setImageWithFade(url: media[1].url)
     case 3: // Use photoA, B, D
-      photoAWidth.priority = UILayoutPriorityDefaultHigh
-      photoAHeight.priority = UILayoutPriorityDefaultHigh
       photoAWidth.constant = halfWidth
       photoAHeight.constant = fullHeight
 
-      photoBWidth.priority = UILayoutPriorityDefaultHigh
-      photoBHeight.priority = UILayoutPriorityDefaultHigh
       photoBWidth.constant = halfWidth
       photoBHeight.constant = halfHeight
 
-      photoCWidth.priority = UILayoutPriorityDefaultHigh
-      photoCHeight.priority = UILayoutPriorityDefaultHigh
       photoCWidth.constant = halfWidth
       photoCHeight.constant = 0
 
-      photoDWidth.priority = UILayoutPriorityDefaultHigh
-      photoDHeight.priority = UILayoutPriorityDefaultHigh
       photoDWidth.constant = halfWidth
       photoDHeight.constant = halfHeight
 
@@ -191,23 +159,15 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       photoB.setImageWithFade(url: media[1].url)
       photoD.setImageWithFade(url: media[2].url)
     default: // Use photoA, B, C, D
-      photoAWidth.priority = UILayoutPriorityDefaultHigh
-      photoAHeight.priority = UILayoutPriorityDefaultHigh
       photoAWidth.constant = halfWidth
       photoAHeight.constant = halfHeight
 
-      photoBWidth.priority = UILayoutPriorityDefaultHigh
-      photoBHeight.priority = UILayoutPriorityDefaultHigh
       photoBWidth.constant = halfWidth
       photoBHeight.constant = halfHeight
 
-      photoCWidth.priority = UILayoutPriorityDefaultHigh
-      photoCHeight.priority = UILayoutPriorityDefaultHigh
       photoCWidth.constant = halfWidth
       photoCHeight.constant = halfHeight
 
-      photoDWidth.priority = UILayoutPriorityDefaultHigh
-      photoDHeight.priority = UILayoutPriorityDefaultHigh
       photoDWidth.constant = halfWidth
       photoDHeight.constant = halfHeight
 
@@ -216,5 +176,6 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       photoC.setImageWithFade(url: media[2].url)
       photoD.setImageWithFade(url: media[3].url)
     }
+    setNeedsLayout()
   }
 }

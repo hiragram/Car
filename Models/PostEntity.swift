@@ -51,7 +51,5 @@ public struct PostEntity: Identified, JSONMappable {
     self.media = try mediaDict.map { (mediumDict) -> MediumEntity in
       return try MediumEntity.init(jsonDict: mediumDict)
     }
-
-    print(self.media.count)
   }
 }
