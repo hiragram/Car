@@ -11,10 +11,28 @@ import Models
 
 final class PostListCell: UITableViewCell, EntityDisplayable {
 
-  @IBOutlet private weak var photoImageView: UIImageView! {
+  @IBOutlet private weak var photoA: UIImageView! {
     didSet {
-      photoImageView.layer.cornerRadius = 5
-      photoImageView.layer.masksToBounds = true
+      photoA.layer.cornerRadius = 5
+      photoA.layer.masksToBounds = true
+    }
+  }
+  @IBOutlet private weak var photoB: UIImageView! {
+    didSet {
+      photoB.layer.cornerRadius = 5
+      photoB.layer.masksToBounds = true
+    }
+  }
+  @IBOutlet private weak var photoC: UIImageView! {
+    didSet {
+      photoC.layer.cornerRadius = 5
+      photoC.layer.masksToBounds = true
+    }
+  }
+  @IBOutlet private weak var photoD: UIImageView! {
+    didSet {
+      photoD.layer.cornerRadius = 5
+      photoD.layer.masksToBounds = true
     }
   }
   @IBOutlet private weak var userIconImageView: UIImageView! {
@@ -36,8 +54,16 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
   @IBOutlet private weak var followCountLabel: UILabel!
   @IBOutlet private weak var followerCountLabel: UILabel!
 
-  @IBOutlet private weak var imageHeight: NSLayoutConstraint!
   @IBOutlet private weak var userIconImageViewHeight: NSLayoutConstraint!
+
+  @IBOutlet weak var photoAWidth: NSLayoutConstraint!
+  @IBOutlet weak var photoAHeight: NSLayoutConstraint!
+  @IBOutlet weak var photoBWidth: NSLayoutConstraint!
+  @IBOutlet weak var photoBHeight: NSLayoutConstraint!
+  @IBOutlet weak var photoCWidth: NSLayoutConstraint!
+  @IBOutlet weak var photoCHeight: NSLayoutConstraint!
+  @IBOutlet weak var photoDWidth: NSLayoutConstraint!
+  @IBOutlet weak var photoDHeight: NSLayoutConstraint!
 
   typealias Entity = PostEntity
 
@@ -45,12 +71,6 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
     displayNameLabel.text = entity.user.displayName
     bodyLabel.text = entity.body
     userIconImageView.setImageWithFade(url: entity.user.imageURL)
-    if let medium = entity.media.filter({ $0.type == .photo }).first {
-      photoImageView.setImageWithFade(url: medium.url)
-      imageHeight.constant = 250
-    } else {
-      imageHeight.constant = 0
-    }
 
     if let retweetingUser = entity.retweetingUser {
       retweetedUserIconImageView.setImageWithFade(url: retweetingUser.imageURL)
@@ -68,6 +88,133 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
     dateLabel.text = entity.date.displayText
 
+    set(media: entity.media)
+
     layoutIfNeeded()
+  }
+
+  private func set(media: [MediumEntity]) {
+    let fullWidth: CGFloat = (UIScreen.main.bounds.width - (13 * 2))
+    let halfWidth = fullWidth / 2
+
+    let halfHeight: CGFloat = 123
+    let fullHeight = halfHeight * 2
+
+    switch media.count {
+    case 0:
+      photoAWidth.priority = UILayoutPriorityDefaultLow
+      photoAHeight.priority = UILayoutPriorityDefaultLow
+      photoAWidth.constant = fullWidth
+      photoAHeight.constant = 0
+
+      photoBWidth.priority = UILayoutPriorityDefaultHigh
+      photoBHeight.priority = UILayoutPriorityDefaultHigh
+      photoBWidth.constant = 0
+      photoBHeight.constant = 0
+
+      photoCWidth.priority = UILayoutPriorityDefaultHigh
+      photoCHeight.priority = UILayoutPriorityDefaultHigh
+      photoCWidth.constant = fullWidth
+      photoCHeight.constant = 0
+
+      photoDWidth.priority = UILayoutPriorityDefaultHigh
+      photoDHeight.priority = UILayoutPriorityDefaultHigh
+      photoDWidth.constant = 0
+      photoDHeight.constant = 0
+    case 1: // Use photoA
+      photoAWidth.priority = UILayoutPriorityDefaultLow
+      photoAHeight.priority = UILayoutPriorityDefaultLow
+      photoAWidth.constant = fullWidth
+      photoAHeight.constant = fullHeight
+
+      photoBWidth.priority = UILayoutPriorityDefaultHigh
+      photoBHeight.priority = UILayoutPriorityDefaultHigh
+      photoBWidth.constant = 0
+      photoBHeight.constant = 0
+
+      photoCWidth.priority = UILayoutPriorityDefaultHigh
+      photoCHeight.priority = UILayoutPriorityDefaultHigh
+      photoCWidth.constant = fullWidth
+      photoCHeight.constant = 0
+
+      photoDWidth.priority = UILayoutPriorityDefaultHigh
+      photoDHeight.priority = UILayoutPriorityDefaultHigh
+      photoDWidth.constant = 0
+      photoDHeight.constant = 0
+
+      photoA.setImageWithFade(url: media[0].url)
+    case 2: // Use photoA, B
+      photoAWidth.priority = UILayoutPriorityDefaultHigh
+      photoAHeight.priority = UILayoutPriorityDefaultHigh
+      photoAWidth.constant = halfWidth
+      photoAHeight.constant = fullHeight
+
+      photoBWidth.priority = UILayoutPriorityDefaultHigh
+      photoBHeight.priority = UILayoutPriorityDefaultHigh
+      photoBWidth.constant = halfWidth
+      photoBHeight.constant = fullHeight
+
+      photoCWidth.priority = UILayoutPriorityDefaultHigh
+      photoCHeight.priority = UILayoutPriorityDefaultHigh
+      photoCWidth.constant = halfWidth
+      photoCHeight.constant = 0
+
+      photoDWidth.priority = UILayoutPriorityDefaultHigh
+      photoDHeight.priority = UILayoutPriorityDefaultHigh
+      photoDWidth.constant = halfWidth
+      photoDHeight.constant = 0
+
+      photoA.setImageWithFade(url: media[0].url)
+      photoB.setImageWithFade(url: media[1].url)
+    case 3: // Use photoA, B, D
+      photoAWidth.priority = UILayoutPriorityDefaultHigh
+      photoAHeight.priority = UILayoutPriorityDefaultHigh
+      photoAWidth.constant = halfWidth
+      photoAHeight.constant = fullHeight
+
+      photoBWidth.priority = UILayoutPriorityDefaultHigh
+      photoBHeight.priority = UILayoutPriorityDefaultHigh
+      photoBWidth.constant = halfWidth
+      photoBHeight.constant = halfHeight
+
+      photoCWidth.priority = UILayoutPriorityDefaultHigh
+      photoCHeight.priority = UILayoutPriorityDefaultHigh
+      photoCWidth.constant = halfWidth
+      photoCHeight.constant = 0
+
+      photoDWidth.priority = UILayoutPriorityDefaultHigh
+      photoDHeight.priority = UILayoutPriorityDefaultHigh
+      photoDWidth.constant = halfWidth
+      photoDHeight.constant = halfHeight
+
+      photoA.setImageWithFade(url: media[0].url)
+      photoB.setImageWithFade(url: media[1].url)
+      photoD.setImageWithFade(url: media[2].url)
+    default: // Use photoA, B, C, D
+      photoAWidth.priority = UILayoutPriorityDefaultHigh
+      photoAHeight.priority = UILayoutPriorityDefaultHigh
+      photoAWidth.constant = halfWidth
+      photoAHeight.constant = halfHeight
+
+      photoBWidth.priority = UILayoutPriorityDefaultHigh
+      photoBHeight.priority = UILayoutPriorityDefaultHigh
+      photoBWidth.constant = halfWidth
+      photoBHeight.constant = halfHeight
+
+      photoCWidth.priority = UILayoutPriorityDefaultHigh
+      photoCHeight.priority = UILayoutPriorityDefaultHigh
+      photoCWidth.constant = halfWidth
+      photoCHeight.constant = halfHeight
+
+      photoDWidth.priority = UILayoutPriorityDefaultHigh
+      photoDHeight.priority = UILayoutPriorityDefaultHigh
+      photoDWidth.constant = halfWidth
+      photoDHeight.constant = halfHeight
+
+      photoA.setImageWithFade(url: media[0].url)
+      photoB.setImageWithFade(url: media[1].url)
+      photoC.setImageWithFade(url: media[2].url)
+      photoD.setImageWithFade(url: media[3].url)
+    }
   }
 }

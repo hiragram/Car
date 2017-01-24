@@ -45,11 +45,13 @@ public struct PostEntity: Identified, JSONMappable {
     self.id = try jsonDict.value(forKey: "id")
     self.date = Date.init(twitterDateString: try jsonDict.value(forKey: "created_at"))!
 
-    let entityDict: [String: Any] = try jsonDict.value(forKey: "entities")
-    let mediaDict: [[String: Any]] = (try? entityDict.value(forKey: "media")) ?? []
+    let extendedEntitiesDict: [String: Any] = (try? jsonDict.value(forKey: "extended_entities")) ?? [:]
+    let mediaDict: [[String: Any]] = (try? extendedEntitiesDict.value(forKey: "media")) ?? []
 
     self.media = try mediaDict.map { (mediumDict) -> MediumEntity in
       return try MediumEntity.init(jsonDict: mediumDict)
     }
+
+    print(self.media.count)
   }
 }
