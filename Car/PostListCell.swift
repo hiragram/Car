@@ -88,6 +88,8 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
     }
   }
 
+  var images: [MediumEntity] = []
+
   func setup(entity: PostEntity) {
     displayNameLabel.text = entity.user.displayName
     bodyLabel.text = entity.body
@@ -114,16 +116,15 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
     layoutIfNeeded()
   }
 
-  private func set(media: [MediumEntity]) {
+  override func updateConstraints() {
     let fullWidth: CGFloat = (UIScreen.main.bounds.width - (13 * 2))
     let halfWidth = fullWidth / 2
 
     let halfHeight: CGFloat = 123
     let fullHeight = halfHeight * 2
 
-    switch media.count {
-    case 0:
-      numberOfImage = .zero
+    switch numberOfImage {
+    case .zero:
       photoAWidth.constant = fullWidth
       photoAHeight.constant = 0
 
@@ -135,8 +136,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
       photoDWidth.constant = 0
       photoDHeight.constant = 0
-    case 1: // Use photoA
-      numberOfImage = .one
+    case .one:
       photoAWidth.constant = fullWidth
       photoAHeight.constant = fullHeight
 
@@ -148,10 +148,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
       photoDWidth.constant = 0
       photoDHeight.constant = 0
-
-      photoA.setImageWithFade(url: media[0].url)
-    case 2: // Use photoA, B
-      numberOfImage = .two
+    case .two:
       photoAWidth.constant = halfWidth
       photoAHeight.constant = fullHeight
 
@@ -163,11 +160,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
       photoDWidth.constant = halfWidth
       photoDHeight.constant = 0
-
-      photoA.setImageWithFade(url: media[0].url)
-      photoB.setImageWithFade(url: media[1].url)
-    case 3: // Use photoA, B, D
-      numberOfImage = .three
+    case .three:
       photoAWidth.constant = halfWidth
       photoAHeight.constant = fullHeight
 
@@ -179,12 +172,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
       photoDWidth.constant = halfWidth
       photoDHeight.constant = halfHeight
-
-      photoA.setImageWithFade(url: media[0].url)
-      photoB.setImageWithFade(url: media[1].url)
-      photoD.setImageWithFade(url: media[2].url)
-    default: // Use photoA, B, C, D
-      numberOfImage = .four
+    case .four:
       photoAWidth.constant = halfWidth
       photoAHeight.constant = halfHeight
 
@@ -196,13 +184,40 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
       photoDWidth.constant = halfWidth
       photoDHeight.constant = halfHeight
+    }
+    super.updateConstraints()
+  }
 
+  private func set(media: [MediumEntity]) {
+
+    switch media.count {
+    case 0:
+      numberOfImage = .zero
+      images = []
+    case 1: // Use photoA
+      numberOfImage = .one
+      photoA.setImageWithFade(url: media[0].url)
+      images = [media[0]]
+    case 2: // Use photoA, B
+      numberOfImage = .two
+      photoA.setImageWithFade(url: media[0].url)
+      photoB.setImageWithFade(url: media[1].url)
+      images = [media[0], media[1]]
+    case 3: // Use photoA, B, D
+      numberOfImage = .three
+      photoA.setImageWithFade(url: media[0].url)
+      photoB.setImageWithFade(url: media[1].url)
+      photoD.setImageWithFade(url: media[2].url)
+      images = [media[0], media[1], media[2]]
+    default: // Use photoA, B, C, D
+      numberOfImage = .four
       photoA.setImageWithFade(url: media[0].url)
       photoB.setImageWithFade(url: media[1].url)
       photoC.setImageWithFade(url: media[2].url)
       photoD.setImageWithFade(url: media[3].url)
+      images = [media[0], media[1], media[2], media[3]]
     }
-    setNeedsLayout()
+    setNeedsUpdateConstraints()
   }
 
   override func prepareForReuse() {
