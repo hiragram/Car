@@ -8,8 +8,12 @@
 
 import UIKit
 import Models
+import RxSwift
+import RxCocoa
 
 final class PostListCell: UITableViewCell, EntityDisplayable {
+
+  var bag = DisposeBag.init()
 
   @IBOutlet private weak var photoA: UIImageView! {
     didSet {
@@ -76,7 +80,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
     case .two:
       return [photoA, photoB]
     case .three:
-      return [photoA, photoC, photoD]
+      return [photoA, photoB, photoD]
     case .four:
       return [photoA, photoB, photoC, photoD]
     case .zero:
@@ -199,6 +203,11 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       photoD.setImageWithFade(url: media[3].url)
     }
     setNeedsLayout()
+  }
+
+  override func prepareForReuse() {
+    bag = DisposeBag.init()
+    super.prepareForReuse()
   }
 }
 

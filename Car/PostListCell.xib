@@ -58,14 +58,14 @@
                             <constraint firstAttribute="width" constant="30" id="Yh8-SZ-i5n"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oBq-8j-zRr" userLabel="photoImageViewA">
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oBq-8j-zRr" userLabel="photoImageViewA">
                         <rect key="frame" x="13" y="76" width="175" height="123"/>
                         <constraints>
                             <constraint firstAttribute="width" priority="750" constant="175" id="AcU-jZ-Uyi"/>
                             <constraint firstAttribute="height" priority="750" constant="123" id="LNj-kB-7tz"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l7T-zz-tzf" userLabel="photoImageViewB">
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l7T-zz-tzf" userLabel="photoImageViewB">
                         <rect key="frame" x="188" y="76" width="175" height="123"/>
                         <constraints>
                             <constraint firstAttribute="height" priority="750" constant="123" id="PrU-Qv-eOX"/>
@@ -96,14 +96,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-cC-JpL" userLabel="photoImageViewC">
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-cC-JpL" userLabel="photoImageViewC">
                         <rect key="frame" x="13" y="199" width="175" height="123"/>
                         <constraints>
                             <constraint firstAttribute="height" priority="750" constant="123" id="BQi-qj-NQy"/>
                             <constraint firstAttribute="width" priority="750" constant="175" id="zjq-xc-uiy"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xmf-g3-kfM" userLabel="photoImageViewD">
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xmf-g3-kfM" userLabel="photoImageViewD">
                         <rect key="frame" x="188" y="199" width="175" height="123"/>
                         <constraints>
                             <constraint firstAttribute="width" priority="750" constant="175" id="7jI-br-U00"/>

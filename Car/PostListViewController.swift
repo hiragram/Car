@@ -25,12 +25,21 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
       vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
         vm.itemContainer.items.bindTo(self.tableView.rx.items(cellType: PostListCell.self)) { row, item, cell in
           cell.setup(entity: item)
+          cell.imageViews.enumerated().forEach({ (index: Int, imageView: UIImageView?) in
+            let recognizer = UITapGestureRecognizer.init()
+            imageView?.addGestureRecognizer(recognizer)
+            recognizer.rx.event.map{_ in ()}.subscribe(onNext: { (_) in
+              self.show(ImageDetailViewController.self, sender: nil) { vc in
+                vc.imageURL = Observable.just(item.media[index].url)
+              }
+            }).addDisposableTo(cell.bag)
+          })
           }.addDisposableTo(vm.bag)
       }).addDisposableTo(bag)
 
-      tableView.rx.modelSelected(PostListViewModel.Item.self).subscribe(onNext: { [weak self] (item) in
-        self?.present(SFSafariViewController.init(url: item.postURL), animated: true, completion: nil)
-      }).addDisposableTo(bag)
+//      tableView.rx.modelSelected(PostListViewModel.Item.self).subscribe(onNext: { [weak self] (item) in
+//        self?.present(SFSafariViewController.init(url: item.postURL), animated: true, completion: nil)
+//      }).addDisposableTo(bag)
 
       tableView.rx.itemSelected.asObservable().subscribe(onNext: { [weak self] (indexPath) in
         self?.tableView.deselectRow(at: indexPath, animated: true)
