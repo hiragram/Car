@@ -25,6 +25,7 @@ struct RestAPI {
       params = [
         "q": query.urlEncoded!,
         "count": "\(count)",
+        "tweet_mode": "extended",
       ]
     }
 
