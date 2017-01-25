@@ -28,13 +28,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かなこ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lay-vw-nfu" userLabel="displayNameLabel">
-                        <rect key="frame" x="81" y="8" width="76" height="17"/>
+                        <rect key="frame" x="81" y="8" width="282" height="17"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@kanako3300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOF-wP-CyB" userLabel="usernameLabel">
-                        <rect key="frame" x="81" y="27" width="76" height="14"/>
+                        <rect key="frame" x="81" y="27" width="282" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -139,6 +139,7 @@
                     <constraint firstItem="Thz-JA-AFI" firstAttribute="top" secondItem="rin-vU-HNT" secondAttribute="bottom" constant="8" id="hwN-eY-goU"/>
                     <constraint firstItem="oBq-8j-zRr" firstAttribute="top" secondItem="IBK-Fh-i2d" secondAttribute="bottom" constant="8" id="ilC-AG-lmN"/>
                     <constraint firstItem="rGr-ow-DAX" firstAttribute="bottom" secondItem="IBK-Fh-i2d" secondAttribute="bottom" constant="-8" id="lh2-HM-Kge"/>
+                    <constraint firstItem="qOF-wP-CyB" firstAttribute="trailing" secondItem="l7T-zz-tzf" secondAttribute="trailing" id="p4v-Yi-UGw"/>
                     <constraint firstItem="fIf-cC-JpL" firstAttribute="top" secondItem="oBq-8j-zRr" secondAttribute="bottom" id="pVB-Pj-d8Y"/>
                     <constraint firstItem="Lay-vw-nfu" firstAttribute="top" secondItem="VIg-wj-QmC" secondAttribute="top" id="q0M-Pu-L7R"/>
                     <constraint firstItem="PdJ-KO-ZaD" firstAttribute="leading" secondItem="eUa-4N-bvg" secondAttribute="trailing" constant="8" id="qdo-Di-fPj"/>
