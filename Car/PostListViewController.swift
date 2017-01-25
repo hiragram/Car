@@ -17,7 +17,7 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
   private let bag = DisposeBag.init()
 
-  @IBOutlet private weak var tableView: UITableView! {
+  @IBOutlet fileprivate weak var tableView: UITableView! {
     didSet {
       tableView.register(nibWithType: PostListCell.self)
       tableView.estimatedRowHeight = 360
@@ -53,5 +53,33 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+//    switch traitCollection.forceTouchCapability {
+//    case .available:
+//      registerForPreviewing(with: self, sourceView: tableView)
+//    }
   }
 }
+
+//extension PostListViewController: UIViewControllerPreviewingDelegate {
+//  func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+//    guard let indexPath = tableView.indexPathForRow(at: location) else {
+//      return nil
+//    }
+//    guard let cell = tableView.cellForRow(at: indexPath) as? PostListCell else {
+//      return nil
+//    }
+//    let images = cell.imageViews.flatMap { $0 }
+//    for (index, view) in images.enumerated() where touchedView(view, location: location) {
+//      let viewRectInTableView = tableView.convert(view.frame, from: view.superview!)
+//      previewingContext.sourceRect = viewRectInTableView
+//
+//      // TODO 遷移
+//    }
+//  }
+//
+//  private func touchedView(_ view: UIView, location: CGPoint) -> Bool {
+//    let locationInView = view.convert(location, from: tableView)
+//    return view.bounds.contains(locationInView)
+//  }
+//}

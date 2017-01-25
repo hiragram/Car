@@ -67,6 +67,23 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
   typealias Entity = PostEntity
 
+  var numberOfImage: NumberOfImage = .one
+
+  var imageViews: [UIImageView?] {
+    switch numberOfImage {
+    case .one:
+      return [photoA]
+    case .two:
+      return [photoA, photoB]
+    case .three:
+      return [photoA, photoC, photoD]
+    case .four:
+      return [photoA, photoB, photoC, photoD]
+    case .zero:
+      return []
+    }
+  }
+
   func setup(entity: PostEntity) {
     displayNameLabel.text = entity.user.displayName
     bodyLabel.text = entity.body
@@ -102,6 +119,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
     switch media.count {
     case 0:
+      numberOfImage = .zero
       photoAWidth.constant = fullWidth
       photoAHeight.constant = 0
 
@@ -114,6 +132,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       photoDWidth.constant = 0
       photoDHeight.constant = 0
     case 1: // Use photoA
+      numberOfImage = .one
       photoAWidth.constant = fullWidth
       photoAHeight.constant = fullHeight
 
@@ -128,6 +147,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
       photoA.setImageWithFade(url: media[0].url)
     case 2: // Use photoA, B
+      numberOfImage = .two
       photoAWidth.constant = halfWidth
       photoAHeight.constant = fullHeight
 
@@ -143,6 +163,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       photoA.setImageWithFade(url: media[0].url)
       photoB.setImageWithFade(url: media[1].url)
     case 3: // Use photoA, B, D
+      numberOfImage = .three
       photoAWidth.constant = halfWidth
       photoAHeight.constant = fullHeight
 
@@ -159,6 +180,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       photoB.setImageWithFade(url: media[1].url)
       photoD.setImageWithFade(url: media[2].url)
     default: // Use photoA, B, C, D
+      numberOfImage = .four
       photoAWidth.constant = halfWidth
       photoAHeight.constant = halfHeight
 
@@ -177,5 +199,15 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       photoD.setImageWithFade(url: media[3].url)
     }
     setNeedsLayout()
+  }
+}
+
+extension PostListCell {
+  enum NumberOfImage {
+    case zero
+    case one
+    case two
+    case three
+    case four
   }
 }
