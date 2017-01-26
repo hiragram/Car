@@ -51,6 +51,7 @@
 		8A7E6EC51E33FF6300B9640F /* MediumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E6EC41E33FF6300B9640F /* MediumEntity.swift */; };
 		8AA77A701E39077400A692FE /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA77A6F1E39077400A692FE /* ImageDetailViewController.swift */; };
 		8AA77A721E39079200A692FE /* ImageDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA77A711E39079200A692FE /* ImageDetailViewController.storyboard */; };
+		8AA77A741E3A57E800A692FE /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA77A731E3A57E800A692FE /* Permission.swift */; };
 		8AB98E771E344F59004AE92D /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB98E761E344F59004AE92D /* WebImage.framework */; };
 		8AB98E791E344F9B004AE92D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB98E781E344F9B004AE92D /* UIImageView.swift */; };
 		F60668561E33941200325D7B /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60668551E33941200325D7B /* RxOptional.framework */; };
@@ -197,6 +198,7 @@
 		8A7E6EC41E33FF6300B9640F /* MediumEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumEntity.swift; sourceTree = "<group>"; };
 		8AA77A6F1E39077400A692FE /* ImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		8AA77A711E39079200A692FE /* ImageDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageDetailViewController.storyboard; sourceTree = "<group>"; };
+		8AA77A731E3A57E800A692FE /* Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		8AB98E761E344F59004AE92D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		8AB98E781E344F9B004AE92D /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		F60668551E33941200325D7B /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 			children = (
 				F6E4DB501E2D0DCD00C5B84F /* extensions */,
 				F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */,
+				8AA77A731E3A57E800A692FE /* Permission.swift */,
 				F6E4DB291E2D0C9E00C5B84F /* Assets.xcassets */,
 				F6E4DB2B1E2D0C9E00C5B84F /* LaunchScreen.storyboard */,
 				F6E4DB2E1E2D0C9E00C5B84F /* Info.plist */,
@@ -859,6 +862,7 @@
 				F6E4DB951E2FE33800C5B84F /* EntityDisplayable.swift in Sources */,
 				F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */,
 				8A5D89AD1E366D9400DB4EDB /* Date.swift in Sources */,
+				8AA77A741E3A57E800A692FE /* Permission.swift in Sources */,
 				8AA77A701E39077400A692FE /* ImageDetailViewController.swift in Sources */,
 				8A442C451E33C3B80021E1E6 /* LoginViewController.swift in Sources */,
 				8A5D89B51E3677CF00DB4EDB /* PostCollectionCell.swift in Sources */,

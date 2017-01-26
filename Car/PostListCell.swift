@@ -71,7 +71,11 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
 
   typealias Entity = PostEntity
 
-  var numberOfImage: NumberOfImage = .one
+  var numberOfImage: NumberOfImage = .one {
+    didSet {
+      setNeedsUpdateConstraints()
+    }
+  }
 
   var imageViews: [UIImageView?] {
     switch numberOfImage {
@@ -141,7 +145,7 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       photoAHeight.constant = fullHeight
 
       photoBWidth.constant = 0
-      photoBHeight.constant = 0
+      photoBHeight.constant = fullHeight
 
       photoCWidth.constant = fullWidth
       photoCHeight.constant = 0
@@ -217,7 +221,6 @@ final class PostListCell: UITableViewCell, EntityDisplayable {
       photoD.setImageWithFade(url: media[3].url)
       images = [media[0], media[1], media[2], media[3]]
     }
-    setNeedsUpdateConstraints()
   }
 
   override func prepareForReuse() {
