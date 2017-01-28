@@ -58,6 +58,15 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
     }
   }
 
+  @IBOutlet private weak var settingsButton: UIBarButtonItem! {
+    didSet {
+      settingsButton.rx.tap.asObservable().subscribe(onNext: { [unowned self] (_) in
+        let vc = UINavigationController.init(rootViewControllerType: SettingViewController.self)
+        self.present(vc, animated: true, completion: nil)
+      }).addDisposableTo(bag)
+    }
+  }
+
   var vm = Variable<PostListViewModel?>.init(nil)
 
   override func viewDidLoad() {

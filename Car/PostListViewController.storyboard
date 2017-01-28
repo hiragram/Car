@@ -39,12 +39,34 @@
                             <constraint firstItem="8Zz-6X-Jqw" firstAttribute="height" secondItem="CvI-KO-062" secondAttribute="height" id="xdW-PZ-hAW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="a0C-GE-EcN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9O9-6G-9mr"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="refreshControl" destination="y65-kK-bz4" id="W1Y-iW-eSx"/>
+                        <outlet property="settingsButton" destination="9O9-6G-9mr" id="1eM-Uq-TYV"/>
                         <outlet property="tableView" destination="8Zz-6X-Jqw" id="zia-Ha-Hli"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNJ-zZ-kKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="100.29985007496252"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e96-ft-l1P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3UB-PL-2AU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HpB-Zs-c98">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zkB-fP-ozF" kind="relationship" relationship="rootViewController" id="3pZ-Xe-dTR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eHK-RL-9tK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="48.799999999999997" y="100.29985007496252"/>
         </scene>
