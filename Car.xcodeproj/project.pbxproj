@@ -54,6 +54,7 @@
 		8AA77A741E3A57E800A692FE /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA77A731E3A57E800A692FE /* Permission.swift */; };
 		8AA77A761E3C794C00A692FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA77A751E3C794C00A692FE /* SettingsViewController.swift */; };
 		8AA77A781E3C796900A692FE /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA77A771E3C796900A692FE /* SettingViewController.storyboard */; };
+		8AA77A7A1E3CF22500A692FE /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA77A791E3CF22500A692FE /* RxDataSources.framework */; };
 		8AB98E771E344F59004AE92D /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB98E761E344F59004AE92D /* WebImage.framework */; };
 		8AB98E791E344F9B004AE92D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB98E781E344F9B004AE92D /* UIImageView.swift */; };
 		F60668561E33941200325D7B /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60668551E33941200325D7B /* RxOptional.framework */; };
@@ -203,6 +204,7 @@
 		8AA77A731E3A57E800A692FE /* Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		8AA77A751E3C794C00A692FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8AA77A771E3C796900A692FE /* SettingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
+		8AA77A791E3CF22500A692FE /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		8AB98E761E344F59004AE92D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		8AB98E781E344F9B004AE92D /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		F60668551E33941200325D7B /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				F60668561E33941200325D7B /* RxOptional.framework in Frameworks */,
 				F6E4DB871E2FE1D000C5B84F /* Models.framework in Frameworks */,
 				8A442C291E33B9B10021E1E6 /* TwitterKit.framework in Frameworks */,
+				8AA77A7A1E3CF22500A692FE /* RxDataSources.framework in Frameworks */,
 				8A442C2D1E33B9B10021E1E6 /* TwitterCore.framework in Frameworks */,
 				F6E4DB5C1E2FD07A00C5B84F /* RxCocoa.framework in Frameworks */,
 				F6E4DB5B1E2FD07A00C5B84F /* RxBlocking.framework in Frameworks */,
@@ -434,6 +437,7 @@
 		F6E4DB561E2FD06300C5B84F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AA77A791E3CF22500A692FE /* RxDataSources.framework */,
 				8AB98E761E344F59004AE92D /* WebImage.framework */,
 				8A442C231E33B9B10021E1E6 /* Fabric.framework */,
 				8A442C241E33B9B10021E1E6 /* TwitterKit.framework */,
@@ -821,6 +825,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 			);
 			name = Carthage;
 			outputPaths = (
