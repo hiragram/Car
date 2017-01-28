@@ -7,7 +7,17 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
 class SettingsViewController: UIViewController, StoryboardInstantiatable {
   
+  @IBOutlet private weak var tableView: UITableView! {
+    didSet {
+
+    }
+  }
+
+  private let vm = SettingsViewModel.init()
 }

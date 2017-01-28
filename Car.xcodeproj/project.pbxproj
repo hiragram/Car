@@ -55,7 +55,7 @@
 		8AA77A761E3C794C00A692FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA77A751E3C794C00A692FE /* SettingsViewController.swift */; };
 		8AA77A781E3C796900A692FE /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA77A771E3C796900A692FE /* SettingsViewController.storyboard */; };
 		8AA77A7A1E3CF22500A692FE /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA77A791E3CF22500A692FE /* RxDataSources.framework */; };
-		8AA77A7C1E3CF3AF00A692FE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA77A7B1E3CF3AF00A692FE /* SettingsViewModel.swift */; };
+		8AA77A801E3CF78200A692FE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA77A7F1E3CF78200A692FE /* SettingsViewModel.swift */; };
 		8AB98E771E344F59004AE92D /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB98E761E344F59004AE92D /* WebImage.framework */; };
 		8AB98E791E344F9B004AE92D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB98E781E344F9B004AE92D /* UIImageView.swift */; };
 		F60668561E33941200325D7B /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60668551E33941200325D7B /* RxOptional.framework */; };
@@ -206,7 +206,7 @@
 		8AA77A751E3C794C00A692FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8AA77A771E3C796900A692FE /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		8AA77A791E3CF22500A692FE /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
-		8AA77A7B1E3CF3AF00A692FE /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = ../SettingsViewModel.swift; sourceTree = "<group>"; };
+		8AA77A7F1E3CF78200A692FE /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8AB98E761E344F59004AE92D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		8AB98E781E344F9B004AE92D /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		F60668551E33941200325D7B /* RxOptional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxOptional.framework; path = Carthage/Build/iOS/RxOptional.framework; sourceTree = "<group>"; };
@@ -501,7 +501,7 @@
 				8AA77A711E39079200A692FE /* ImageDetailViewController.storyboard */,
 				8AA77A751E3C794C00A692FE /* SettingsViewController.swift */,
 				8AA77A771E3C796900A692FE /* SettingsViewController.storyboard */,
-				8AA77A7B1E3CF3AF00A692FE /* SettingsViewModel.swift */,
+				8AA77A7F1E3CF78200A692FE /* SettingsViewModel.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -878,7 +878,7 @@
 				F6E4DB951E2FE33800C5B84F /* EntityDisplayable.swift in Sources */,
 				F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */,
 				8A5D89AD1E366D9400DB4EDB /* Date.swift in Sources */,
-				8AA77A7C1E3CF3AF00A692FE /* SettingsViewModel.swift in Sources */,
+				8AA77A801E3CF78200A692FE /* SettingsViewModel.swift in Sources */,
 				8AA77A741E3A57E800A692FE /* Permission.swift in Sources */,
 				8AA77A701E39077400A692FE /* ImageDetailViewController.swift in Sources */,
 				8A442C451E33C3B80021E1E6 /* LoginViewController.swift in Sources */,
