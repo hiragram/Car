@@ -8,6 +8,6 @@
 
 import UIKit
 
-class SettingViewController: UIViewController, StoryboardInstantiatable {
+class SettingsViewController: UIViewController, StoryboardInstantiatable {
   
 }

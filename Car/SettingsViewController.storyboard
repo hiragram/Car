@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Setting View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="Esr-l5-ygf">
             <objects>
-                <viewController id="L1m-UU-Zz9" customClass="SettingViewController" customModule="Car" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="L1m-UU-Zz9" customClass="SettingsViewController" customModule="Car" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RVk-7h-sW7"/>
                         <viewControllerLayoutGuide type="bottom" id="EZG-Oh-C3x"/>
