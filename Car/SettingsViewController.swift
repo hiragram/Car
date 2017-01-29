@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController, StoryboardInstantiatable {
 
   @IBOutlet private weak var tableView: UITableView! {
     didSet {
-      tableView.register(cellClass: UITableViewCell.self)
+      tableView.register(nibWithType: TextFieldCell.self)
       Observable.just(vm.sections).bindTo(tableView.rx.items(dataSource: vm.dataSource)).addDisposableTo(bag)
     }
   }

@@ -20,8 +20,8 @@ class SettingsViewModel {
 
   init() {
     dataSource.configureCell = { (dataSource, tableView, indexPath, row) -> UITableViewCell in
-      let cell: UITableViewCell = tableView.dequeueCell(for: indexPath)
-      cell.textLabel?.text = row
+      let cell: TextFieldCell = tableView.dequeueCell(for: indexPath)
+      cell.title = row
       return cell
     }
   }
