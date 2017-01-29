@@ -16,6 +16,14 @@ extension UITableView {
     let name = String.init(describing: nibWithType.self)
     register(UINib.init(nibName: name, bundle: nil), forCellReuseIdentifier: name)
   }
+
+  func register(cellClass: UITableViewCell.Type) {
+    register(cellClass.self, forCellReuseIdentifier: String.init(describing: cellClass.self))
+  }
+
+  func dequeueCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
+    return dequeueReusableCell(withIdentifier: String.init(describing: T.self), for: indexPath) as! T
+  }
 }
 
 extension Reactive where Base: UITableView {

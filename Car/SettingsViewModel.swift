@@ -12,15 +12,33 @@ import RxCocoa
 import RxDataSources
 
 class SettingsViewModel {
-  private let dataSource = RxTableViewSectionedReloadDataSource<Section>.init()
+  let dataSource = RxTableViewSectionedReloadDataSource<Section>.init()
+
+  let sections: [Section] = [
+    Section.init(items: ["検索文字列"])
+  ]
+
+  init() {
+    dataSource.configureCell = { (dataSource, tableView, indexPath, row) -> UITableViewCell in
+      let cell: UITableViewCell = tableView.dequeueCell(for: indexPath)
+      cell.textLabel?.text = row
+      return cell
+    }
+  }
 }
 
-private struct Section: SectionModelType {
-  typealias Item = String
+extension SettingsViewModel {
+  struct Section: SectionModelType {
+    typealias Item = String
 
-  var items: [Item]
+    var items: [Item]
 
-  init(original: Section, items: [Item]) {
-    self.items = items
+    init(items: [Item]) {
+      self.items = items
+    }
+
+    init(original: Section, items: [Item]) {
+      self.items = items
+    }
   }
 }

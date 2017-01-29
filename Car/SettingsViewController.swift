@@ -12,10 +12,21 @@ import RxCocoa
 import RxDataSources
 
 class SettingsViewController: UIViewController, StoryboardInstantiatable {
-  
+
+  private let bag = DisposeBag.init()
+
   @IBOutlet private weak var tableView: UITableView! {
     didSet {
+      tableView.register(cellClass: UITableViewCell.self)
+      Observable.just(vm.sections).bindTo(tableView.rx.items(dataSource: vm.dataSource)).addDisposableTo(bag)
+    }
+  }
 
+  @IBOutlet private weak var doneButton: UIBarButtonItem! {
+    didSet {
+      doneButton.rx.tap.asObservable().subscribe(onNext: { [unowned self] (_) in
+        self.dismiss(animated: true, completion: nil)
+      }).addDisposableTo(bag)
     }
   }
 
