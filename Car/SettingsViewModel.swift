@@ -10,26 +10,36 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Models
 
 class SettingsViewModel {
   let dataSource = RxTableViewSectionedReloadDataSource<Section>.init()
 
-  let sections: [Section] = [
-    Section.init(items: ["検索文字列"])
-  ]
+  let sections: [Section]
 
   init() {
     dataSource.configureCell = { (dataSource, tableView, indexPath, row) -> UITableViewCell in
-      let cell: TextFieldCell = tableView.dequeueCell(for: indexPath)
-      cell.title = row
-      return cell
+      switch row {
+      case .textField(title: let title, variable: let variable):
+        let cell: TextFieldCell = tableView.dequeueCell(for: indexPath)
+        cell.title = title
+        variable.asObservable().bindTo(cell.textValue).addDisposableTo(cell.bag)
+        cell.textValue.bindTo(variable).addDisposableTo(cell.bag)
+        return cell
+      default:
+        fatalError("未実装")
+      }
     }
+
+    sections  = [
+      Section.init(items: [.textField(title: "検索文字列", variable: Search.text)])
+    ]
   }
 }
 
 extension SettingsViewModel {
   struct Section: SectionModelType {
-    typealias Item = String
+    typealias Item = Row
 
     var items: [Item]
 
@@ -39,6 +49,20 @@ extension SettingsViewModel {
 
     init(original: Section, items: [Item]) {
       self.items = items
+    }
+  }
+
+  enum Row {
+    case textField(title: String, variable: Variable<String?>)
+    case boolean(title: String, variable: Variable<Bool>)
+
+    var title: String {
+      switch self {
+      case .textField(title: let title, variable: _):
+        return title
+      case .boolean(title: let title, variable: _):
+        return title
+      }
     }
   }
 }

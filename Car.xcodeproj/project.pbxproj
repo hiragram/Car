@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A178ED81E3DF91000EA4ED5 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178ED71E3DF91000EA4ED5 /* Search.swift */; };
 		8A442C0E1E33B8D00021E1E6 /* TwitterService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C051E33B8D00021E1E6 /* TwitterService.framework */; };
 		8A442C151E33B8D00021E1E6 /* TwitterServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A442C141E33B8D00021E1E6 /* TwitterServiceTests.swift */; };
 		8A442C171E33B8D00021E1E6 /* TwitterService.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A442C071E33B8D00021E1E6 /* TwitterService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -175,6 +176,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A178ED71E3DF91000EA4ED5 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		8A442C051E33B8D00021E1E6 /* TwitterService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TwitterService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A442C071E33B8D00021E1E6 /* TwitterService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterService.h; sourceTree = "<group>"; };
 		8A442C081E33B8D00021E1E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				F6E4DB921E2FE26600C5B84F /* UserEntity.swift */,
 				8A442C341E33BC300021E1E6 /* ObservablePaging.swift */,
 				8A442C421E33C2F40021E1E6 /* Auth.swift */,
+				8A178ED71E3DF91000EA4ED5 /* Search.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				8A442C351E33BC300021E1E6 /* ObservablePaging.swift in Sources */,
 				F6E4DBA41E2FEF8000C5B84F /* PagedItems.swift in Sources */,
 				F6E4DB9C1E2FE6DA00C5B84F /* EntityProtocols.swift in Sources */,
+				8A178ED81E3DF91000EA4ED5 /* Search.swift in Sources */,
 				8A5D89AB1E366A3300DB4EDB /* Date.swift in Sources */,
 				8A442C431E33C2F40021E1E6 /* Auth.swift in Sources */,
 			);

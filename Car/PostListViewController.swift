@@ -50,7 +50,7 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
   @IBOutlet private weak var refreshControl: UIRefreshControl! {
     didSet {
       vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
-        self.refreshControl.rx.controlEvent(.valueChanged).flatMap {
+        self.refreshControl.rx.controlEvent(.valueChanged).flatMap { [unowned vm] in
           vm.fetch
         }.subscribe().addDisposableTo(vm.bag)
         vm.isLoading.bindTo(self.refreshControl.rx.isRefreshing).addDisposableTo(vm.bag)

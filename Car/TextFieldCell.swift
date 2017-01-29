@@ -12,6 +12,8 @@ import RxCocoa
 
 class TextFieldCell: UITableViewCell {
 
+  var bag = DisposeBag.init()
+
   @IBOutlet private weak var titleLabel: UILabel!
 
   @IBOutlet private weak var contentTextField: UITextField!
@@ -28,5 +30,10 @@ class TextFieldCell: UITableViewCell {
     get {
       return titleLabel.text ?? ""
     }
+  }
+
+  override func prepareForReuse() {
+    bag = DisposeBag.init()
+    super.prepareForReuse()
   }
 }
