@@ -35,6 +35,27 @@ struct RestAPI {
       return response.content
     }
   }
+
+  struct StatusesLookup: Endpoint {
+    typealias Response = ArrayResponse<PostEntity>
+    typealias JSONStructure = [[String: Any]]
+    static var path = "/statuses/lookup.json"
+    static var method = Method.get
+
+    let params: [String: String]
+
+    init(ids: [Int]) {
+      params = [
+        "id": ids.map { "\($0)" }.joined(separator: ","),
+        "tweet_mode": "extended",
+      ]
+    }
+
+    static func mapping(jsonDict: Array<[String : Any]>) throws -> Array<PostEntity> {
+      let response = try Response.init(jsonDict: jsonDict)
+      return response.content
+    }
+  }
 }
 
 private extension String {

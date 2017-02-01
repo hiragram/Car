@@ -11,6 +11,7 @@
 		8A178EDD1E4238E000EA4ED5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178EDC1E4238E000EA4ED5 /* UIViewController.swift */; };
 		8A178EDF1E4240D800EA4ED5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178EDE1E4240D800EA4ED5 /* PostViewController.swift */; };
 		8A178EE11E4240FC00EA4ED5 /* PostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A178EE01E4240FC00EA4ED5 /* PostViewController.storyboard */; };
+		8A178EE51E4254DE00EA4ED5 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178EE41E4254DE00EA4ED5 /* PostViewModel.swift */; };
 		8A442C0E1E33B8D00021E1E6 /* TwitterService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C051E33B8D00021E1E6 /* TwitterService.framework */; };
 		8A442C151E33B8D00021E1E6 /* TwitterServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A442C141E33B8D00021E1E6 /* TwitterServiceTests.swift */; };
 		8A442C171E33B8D00021E1E6 /* TwitterService.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A442C071E33B8D00021E1E6 /* TwitterService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -182,6 +183,7 @@
 		8A178EDC1E4238E000EA4ED5 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8A178EDE1E4240D800EA4ED5 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		8A178EE01E4240FC00EA4ED5 /* PostViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostViewController.storyboard; sourceTree = "<group>"; };
+		8A178EE41E4254DE00EA4ED5 /* PostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		8A442C051E33B8D00021E1E6 /* TwitterService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TwitterService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A442C071E33B8D00021E1E6 /* TwitterService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterService.h; sourceTree = "<group>"; };
 		8A442C081E33B8D00021E1E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 				8AA77A821E3D7F4500A692FE /* TextFieldCell.swift */,
 				8AA77A841E3D7F5E00A692FE /* TextFieldCell.xib */,
 				8A178EDE1E4240D800EA4ED5 /* PostViewController.swift */,
+				8A178EE41E4254DE00EA4ED5 /* PostViewModel.swift */,
 				8A178EE01E4240FC00EA4ED5 /* PostViewController.storyboard */,
 			);
 			name = views;
@@ -899,6 +902,7 @@
 				8A5D89AD1E366D9400DB4EDB /* Date.swift in Sources */,
 				8AA77A801E3CF78200A692FE /* SettingsViewModel.swift in Sources */,
 				8AA77A741E3A57E800A692FE /* Permission.swift in Sources */,
+				8A178EE51E4254DE00EA4ED5 /* PostViewModel.swift in Sources */,
 				8AA77A701E39077400A692FE /* ImageDetailViewController.swift in Sources */,
 				8A442C451E33C3B80021E1E6 /* LoginViewController.swift in Sources */,
 				8A5D89B51E3677CF00DB4EDB /* PostCollectionCell.swift in Sources */,

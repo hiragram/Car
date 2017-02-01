@@ -23,7 +23,7 @@ public struct TwitterRepository {
         let request = client.urlRequest(withMethod: T.method.string, url: endpointURL, parameters: endpoint.params, error: nil)
 
         client.sendTwitterRequest(request) { (response, data, error) in
-          guard let response = response else {
+          guard let _ = response else {
             observer.onError(error!)
             return
           }
@@ -55,8 +55,20 @@ public extension TwitterRepository {
   public static func search(query: String, count: Int = 15) -> ObservablePaging<[PostEntity]> {
     return ObservablePaging.single(fetch(RestAPI.Search.init(query: query, count: count)))
   }
+
+  public static func getTweet(id: Int) -> Observable<PostEntity> {
+    return fetch(RestAPI.StatusesLookup.init(ids: [id]))
+      .map {
+        guard let post = $0.first else {
+          throw TwitterRepositoryError.contentNotFound
+        }
+        return post
+    }
+
+  }
 }
 
 public enum TwitterRepositoryError: Error {
   case castFailed
+  case contentNotFound
 }

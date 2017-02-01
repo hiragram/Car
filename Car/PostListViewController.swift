@@ -25,7 +25,9 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
       tableView.rx.modelSelected(PostListViewModel.Item.self).subscribe(onNext: { [weak self] (item) in
         self?.show(PostViewController.self, sender: nil, configuration: { (vc) in
-          
+          let vm = PostViewModel.init()
+          vm.context.value = .entity(item)
+          vc.vm.value = vm
         })
       }).addDisposableTo(bag)
 
