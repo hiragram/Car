@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8A178ED81E3DF91000EA4ED5 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178ED71E3DF91000EA4ED5 /* Search.swift */; };
 		8A178EDD1E4238E000EA4ED5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178EDC1E4238E000EA4ED5 /* UIViewController.swift */; };
+		8A178EDF1E4240D800EA4ED5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178EDE1E4240D800EA4ED5 /* PostViewController.swift */; };
+		8A178EE11E4240FC00EA4ED5 /* PostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A178EE01E4240FC00EA4ED5 /* PostViewController.storyboard */; };
 		8A442C0E1E33B8D00021E1E6 /* TwitterService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C051E33B8D00021E1E6 /* TwitterService.framework */; };
 		8A442C151E33B8D00021E1E6 /* TwitterServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A442C141E33B8D00021E1E6 /* TwitterServiceTests.swift */; };
 		8A442C171E33B8D00021E1E6 /* TwitterService.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A442C071E33B8D00021E1E6 /* TwitterService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -178,6 +180,8 @@
 /* Begin PBXFileReference section */
 		8A178ED71E3DF91000EA4ED5 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		8A178EDC1E4238E000EA4ED5 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		8A178EDE1E4240D800EA4ED5 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		8A178EE01E4240FC00EA4ED5 /* PostViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostViewController.storyboard; sourceTree = "<group>"; };
 		8A442C051E33B8D00021E1E6 /* TwitterService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TwitterService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A442C071E33B8D00021E1E6 /* TwitterService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterService.h; sourceTree = "<group>"; };
 		8A442C081E33B8D00021E1E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -511,6 +515,8 @@
 				8AA77A7F1E3CF78200A692FE /* SettingsViewModel.swift */,
 				8AA77A821E3D7F4500A692FE /* TextFieldCell.swift */,
 				8AA77A841E3D7F5E00A692FE /* TextFieldCell.xib */,
+				8A178EDE1E4240D800EA4ED5 /* PostViewController.swift */,
+				8A178EE01E4240FC00EA4ED5 /* PostViewController.storyboard */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -778,6 +784,7 @@
 				F6E4DB641E2FD1C500C5B84F /* TabViewController.storyboard in Resources */,
 				8A5D89B11E3675C600DB4EDB /* PostCollectionViewController.storyboard in Resources */,
 				8AA77A851E3D7F5E00A692FE /* TextFieldCell.xib in Resources */,
+				8A178EE11E4240FC00EA4ED5 /* PostViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +890,7 @@
 				8AB98E791E344F9B004AE92D /* UIImageView.swift in Sources */,
 				8A5D89B71E36791600DB4EDB /* UICollectionView.swift in Sources */,
 				F6E4DB6C1E2FDDBD00C5B84F /* PostListCell.swift in Sources */,
+				8A178EDF1E4240D800EA4ED5 /* PostViewController.swift in Sources */,
 				F6E4DBA21E2FED9600C5B84F /* UITableView.swift in Sources */,
 				F6E4DB661E2FDBD900C5B84F /* PostListViewController.swift in Sources */,
 				F6E4DB951E2FE33800C5B84F /* EntityDisplayable.swift in Sources */,

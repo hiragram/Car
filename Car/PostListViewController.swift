@@ -24,7 +24,9 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
 
       tableView.rx.modelSelected(PostListViewModel.Item.self).subscribe(onNext: { [weak self] (item) in
-        self?.present(SFSafariViewController.init(url: item.postURL), animated: true, completion: nil)
+        self?.show(PostViewController.self, sender: nil, configuration: { (vc) in
+          
+        })
       }).addDisposableTo(bag)
 
       tableView.rx.itemSelected.asObservable().subscribe(onNext: { [weak self] (indexPath) in
