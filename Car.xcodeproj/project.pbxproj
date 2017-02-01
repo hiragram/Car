@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A178ED81E3DF91000EA4ED5 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178ED71E3DF91000EA4ED5 /* Search.swift */; };
+		8A178EDD1E4238E000EA4ED5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178EDC1E4238E000EA4ED5 /* UIViewController.swift */; };
 		8A442C0E1E33B8D00021E1E6 /* TwitterService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A442C051E33B8D00021E1E6 /* TwitterService.framework */; };
 		8A442C151E33B8D00021E1E6 /* TwitterServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A442C141E33B8D00021E1E6 /* TwitterServiceTests.swift */; };
 		8A442C171E33B8D00021E1E6 /* TwitterService.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A442C071E33B8D00021E1E6 /* TwitterService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -68,7 +69,6 @@
 		F6E4DB381E2D0C9E00C5B84F /* CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB371E2D0C9E00C5B84F /* CarTests.swift */; };
 		F6E4DB431E2D0C9E00C5B84F /* CarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB421E2D0C9E00C5B84F /* CarUITests.swift */; };
 		F6E4DB521E2D0DE600C5B84F /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB511E2D0DE600C5B84F /* StoryboardInstantiatable.swift */; };
-		F6E4DB551E2D0E3700C5B84F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4DB541E2D0E3700C5B84F /* UIViewController.swift */; };
 		F6E4DB5B1E2FD07A00C5B84F /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E4DB571E2FD07A00C5B84F /* RxBlocking.framework */; };
 		F6E4DB5C1E2FD07A00C5B84F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E4DB581E2FD07A00C5B84F /* RxCocoa.framework */; };
 		F6E4DB5D1E2FD07A00C5B84F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E4DB591E2FD07A00C5B84F /* RxSwift.framework */; };
@@ -177,6 +177,7 @@
 
 /* Begin PBXFileReference section */
 		8A178ED71E3DF91000EA4ED5 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		8A178EDC1E4238E000EA4ED5 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8A442C051E33B8D00021E1E6 /* TwitterService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TwitterService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A442C071E33B8D00021E1E6 /* TwitterService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterService.h; sourceTree = "<group>"; };
 		8A442C081E33B8D00021E1E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -228,7 +229,6 @@
 		F6E4DB421E2D0C9E00C5B84F /* CarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarUITests.swift; sourceTree = "<group>"; };
 		F6E4DB441E2D0C9E00C5B84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6E4DB511E2D0DE600C5B84F /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
-		F6E4DB541E2D0E3700C5B84F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = ../UIViewController.swift; sourceTree = "<group>"; };
 		F6E4DB571E2FD07A00C5B84F /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		F6E4DB581E2FD07A00C5B84F /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		F6E4DB591E2FD07A00C5B84F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -430,7 +430,7 @@
 		F6E4DB501E2D0DCD00C5B84F /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F6E4DB541E2D0E3700C5B84F /* UIViewController.swift */,
+				8A178EDC1E4238E000EA4ED5 /* UIViewController.swift */,
 				8AB98E781E344F9B004AE92D /* UIImageView.swift */,
 				F6E4DBA51E2FF7FE00C5B84F /* UINavigationController.swift */,
 				F6E4DB511E2D0DE600C5B84F /* StoryboardInstantiatable.swift */,
@@ -882,11 +882,11 @@
 				8AA77A761E3C794C00A692FE /* SettingsViewController.swift in Sources */,
 				8AB98E791E344F9B004AE92D /* UIImageView.swift in Sources */,
 				8A5D89B71E36791600DB4EDB /* UICollectionView.swift in Sources */,
-				F6E4DB551E2D0E3700C5B84F /* UIViewController.swift in Sources */,
 				F6E4DB6C1E2FDDBD00C5B84F /* PostListCell.swift in Sources */,
 				F6E4DBA21E2FED9600C5B84F /* UITableView.swift in Sources */,
 				F6E4DB661E2FDBD900C5B84F /* PostListViewController.swift in Sources */,
 				F6E4DB951E2FE33800C5B84F /* EntityDisplayable.swift in Sources */,
+				8A178EDD1E4238E000EA4ED5 /* UIViewController.swift in Sources */,
 				F6E4DB231E2D0C9E00C5B84F /* AppDelegate.swift in Sources */,
 				8A5D89AD1E366D9400DB4EDB /* Date.swift in Sources */,
 				8AA77A801E3CF78200A692FE /* SettingsViewModel.swift in Sources */,
