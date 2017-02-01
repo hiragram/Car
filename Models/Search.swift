@@ -24,7 +24,13 @@ public struct Search {
     textSubject.on(event)
   }
 
-  private static let textSubject = PublishSubject<String?>.init()
+  private static var textSubject: ReplaySubject<String?> = { _ -> ReplaySubject<String?> in
+    let sub = ReplaySubject<String?>.create(bufferSize: 1)
+    if let savedText = UserDefaults.standard.value(forKey: searchTextKey) as? String {
+      sub.onNext(savedText)
+    }
+    return sub
+  }()
 
   public static let text = ControlProperty<String?>.init(values: textSubject.asObservable(), valueSink: textObserver)
 }
