@@ -23,7 +23,7 @@ class PostCollectionViewController: UIViewController, StoryboardInstantiatable {
       vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
         vm.itemContainer.items.bindTo(self.collectionView.rx.items(cellType: PostCollectionViewCell.self)) { number, item, cell in
           cell.setup(entity: item)
-        }.addDisposableTo(vm.bag)
+        }.addDisposableTo(self.bag)
 
         let refreshControl = UIRefreshControl.init()
         refreshControl.rx.controlEvent(.valueChanged).flatMap {

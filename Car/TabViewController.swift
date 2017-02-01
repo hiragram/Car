@@ -16,31 +16,52 @@ final class TabViewController: UITabBarController, StoryboardInstantiatable {
 
   private let bag = DisposeBag.init()
 
+  private var tableViewController: PostListViewController!
+  private var gridViewController: PostCollectionViewController!
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let commonViewModel = PostListViewModel.init(postsObservable: TwitterRepository.search(query: "#裏垢女子 filter:twimg", count: 100))
+    let table = PostListViewController.instantiateFromStoryboard()
+    let tableNavigation = UINavigationController.init(rootViewController: table)
 
-    commonViewModel.fetch.subscribe(onError: { (error) in
-      print(error)
-    }).addDisposableTo(self.bag)
+    let grid = PostCollectionViewController.instantiateFromStoryboard()
+    let gridNavigation = UINavigationController.init(rootViewController: grid)
 
-    let table = UINavigationController.init(rootViewControllerType: PostListViewController.self, configuration: { (vc) in
-      vc.title = "ホーム"
-      vc.vm.value = commonViewModel
-    })
-
-    let grid = UINavigationController.init(rootViewControllerType: PostCollectionViewController.self) { (vc) in
-      vc.title = "写真一覧"
-      vc.vm.value = commonViewModel
-    }
+    tableViewController = table
+    gridViewController = grid
 
     let viewControllers = [
-      table,
-      grid,
+      tableNavigation,
+      gridNavigation,
       ]
 
     setViewControllers(viewControllers, animated: true)
+
+    let viewModelSequence = Search.text.asObservable()
+      .throttle(2.0, latest: true, scheduler: MainScheduler.instance)
+      .map { (text) -> PostListViewModel in
+        let paging: ObservablePaging<[PostEntity]>
+        if let text = text {
+          paging = TwitterRepository.search(query: "\(text) filter:twimg", count: 100)
+        } else {
+          paging = .single(Observable<[PostEntity]>.empty())
+        }
+
+        let vm = PostListViewModel.init(postsObservable: paging)
+        vm.fetch.subscribe().addDisposableTo(vm.bag)
+        return vm
+    }.shareReplay(1)
+
+    viewModelSequence.bindTo(tableViewController.vm).addDisposableTo(bag)
+    viewModelSequence.bindTo(gridViewController.vm).addDisposableTo(bag)
+
+    Search.text.asObservable().map {
+      guard let text = $0 else {
+        return ""
+      }
+      return "\"\(text)\""
+      }.bindTo(tableViewController.rx.title).addDisposableTo(bag)
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -52,7 +73,7 @@ final class TabViewController: UITabBarController, StoryboardInstantiatable {
       case .authorized:
         break
       }
-      }).addDisposableTo(bag)
+    }).addDisposableTo(bag)
   }
 }
 
