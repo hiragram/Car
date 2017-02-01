@@ -13,7 +13,18 @@ import RxCocoa
 private let searchTextKey = "searchText"
 
 public struct Search {
-  public static let text: Variable<String?> = { _ -> Variable<String?> in
-    return Variable<String?>.init(UserDefaults.standard.value(forKey: searchTextKey) as? String)
-  }()
+  private static let textObserver = AnyObserver<String?>.init { (event) in
+    switch event {
+    case .next(let text):
+      UserDefaults.standard.set(text, forKey: searchTextKey)
+      UserDefaults.standard.synchronize()
+    default:
+      break
+    }
+    textSubject.on(event)
+  }
+
+  private static let textSubject = PublishSubject<String?>.init()
+
+  public static let text = ControlProperty<String?>.init(values: textSubject.asObservable(), valueSink: textObserver)
 }

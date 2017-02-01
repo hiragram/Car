@@ -20,11 +20,13 @@ class SettingsViewModel {
   init() {
     dataSource.configureCell = { (dataSource, tableView, indexPath, row) -> UITableViewCell in
       switch row {
-      case .textField(title: let title, variable: let variable):
+      case .textField(title: let title, observable: let observable, observer: let observer):
         let cell: TextFieldCell = tableView.dequeueCell(for: indexPath)
         cell.title = title
-        variable.asObservable().bindTo(cell.textValue).addDisposableTo(cell.bag)
-        cell.textValue.bindTo(variable).addDisposableTo(cell.bag)
+        observable?.bindTo(cell.textValue).addDisposableTo(cell.bag)
+        if let observer = observer {
+          cell.textValue.bindTo(observer).addDisposableTo(cell.bag)
+        }
         return cell
       default:
         fatalError("未実装")
@@ -32,7 +34,7 @@ class SettingsViewModel {
     }
 
     sections  = [
-      Section.init(items: [.textField(title: "検索文字列", variable: Search.text)])
+      Section.init(items: [.textField(title: "検索文字列", observable: Search.text.asObservable(), observer: Search.text.asObserver())])
     ]
   }
 }
@@ -53,14 +55,14 @@ extension SettingsViewModel {
   }
 
   enum Row {
-    case textField(title: String, variable: Variable<String?>)
-    case boolean(title: String, variable: Variable<Bool>)
+    case textField(title: String, observable: Observable<String?>?, observer: AnyObserver<String?>?)
+    case boolean(title: String, observable: Observable<Bool>?, observer: AnyObserver<Bool>?)
 
     var title: String {
       switch self {
-      case .textField(title: let title, variable: _):
+      case .textField(title: let title, observable: _, observer: _):
         return title
-      case .boolean(title: let title, variable: _):
+      case .boolean(title: let title, observable: _, observer: _):
         return title
       }
     }
