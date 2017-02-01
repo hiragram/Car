@@ -22,20 +22,6 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
       tableView.register(nibWithType: PostListCell.self)
       tableView.estimatedRowHeight = 360
 
-      vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
-        vm.itemContainer.items.bindTo(self.tableView.rx.items(cellType: PostListCell.self)) { row, item, cell in
-          cell.setup(entity: item)
-          cell.imageViews.enumerated().forEach({ (index: Int, imageView: UIImageView?) in
-            let recognizer = UITapGestureRecognizer.init()
-            imageView?.addGestureRecognizer(recognizer)
-            recognizer.rx.event.map{_ in ()}.subscribe(onNext: { (_) in
-              self.show(ImageDetailViewController.self, sender: nil) { vc in
-                vc.imageURL = Observable.just(item.media[index].url)
-              }
-            }).addDisposableTo(cell.bag)
-          })
-          }.addDisposableTo(vm.bag)
-      }).addDisposableTo(bag)
 
       tableView.rx.modelSelected(PostListViewModel.Item.self).subscribe(onNext: { [weak self] (item) in
         self?.present(SFSafariViewController.init(url: item.postURL), animated: true, completion: nil)
@@ -49,12 +35,6 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
   @IBOutlet private weak var refreshControl: UIRefreshControl! {
     didSet {
-      vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
-        self.refreshControl.rx.controlEvent(.valueChanged).flatMap { [unowned vm] in
-          vm.fetch
-        }.subscribe().addDisposableTo(vm.bag)
-        vm.isLoading.bindTo(self.refreshControl.rx.isRefreshing).addDisposableTo(vm.bag)
-      }).addDisposableTo(bag)
     }
   }
 
@@ -71,6 +51,30 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
+      vm.itemContainer.items
+        .bindTo(self.tableView.rx.items(cellType: PostListCell.self)) { [weak self] (row: Int, item: PostEntity, cell: PostListCell) in
+          cell.setup(entity: item)
+          cell.imageViews.enumerated().forEach({ (index: Int, imageView: UIImageView?) in
+            let recognizer = UITapGestureRecognizer.init()
+            imageView?.addGestureRecognizer(recognizer)
+            recognizer.rx.event.map{_ in ()}.subscribe(onNext: { (_) in
+              self!.show(ImageDetailViewController.self, sender: nil) { vc in
+                vc.imageURL = Observable.just(item.media[index].url)
+              }
+            }).addDisposableTo(cell.bag)
+          })
+        }
+        .addDisposableTo(self.bag) // vm.bagだとdoブロックには流れてくるがtableViewには反映されない…。
+
+      self.refreshControl.rx.controlEvent(.valueChanged).flatMap { [unowned vm] in
+        vm.fetch
+        }.subscribe().addDisposableTo(vm.bag)
+      vm.isLoading.bindTo(self.refreshControl.rx.isRefreshing).addDisposableTo(vm.bag)
+
+    }).addDisposableTo(bag)
+
 
     switch traitCollection.forceTouchCapability {
     case .available:
