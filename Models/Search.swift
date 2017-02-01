@@ -32,5 +32,5 @@ public struct Search {
     return sub
   }()
 
-  public static let text = ControlProperty<String?>.init(values: textSubject.asObservable(), valueSink: textObserver)
+  public static let text = ControlProperty<String?>.init(values: textSubject.asObservable().distinctUntilChanged(), valueSink: textObserver)
 }
