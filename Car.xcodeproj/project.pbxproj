@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A04F3D21E43642F000AF27E /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04F3D11E43642F000AF27E /* PostImageCell.swift */; };
+		8A04F3D41E436446000AF27E /* PostImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A04F3D31E436446000AF27E /* PostImageCell.xib */; };
 		8A178ED81E3DF91000EA4ED5 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178ED71E3DF91000EA4ED5 /* Search.swift */; };
 		8A178EDD1E4238E000EA4ED5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178EDC1E4238E000EA4ED5 /* UIViewController.swift */; };
 		8A178EDF1E4240D800EA4ED5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178EDE1E4240D800EA4ED5 /* PostViewController.swift */; };
@@ -179,6 +181,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A04F3D11E43642F000AF27E /* PostImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
+		8A04F3D31E436446000AF27E /* PostImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageCell.xib; sourceTree = "<group>"; };
 		8A178ED71E3DF91000EA4ED5 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		8A178EDC1E4238E000EA4ED5 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8A178EDE1E4240D800EA4ED5 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -519,6 +523,8 @@
 				8AA77A841E3D7F5E00A692FE /* TextFieldCell.xib */,
 				8A178EDE1E4240D800EA4ED5 /* PostViewController.swift */,
 				8A178EE41E4254DE00EA4ED5 /* PostViewModel.swift */,
+				8A04F3D11E43642F000AF27E /* PostImageCell.swift */,
+				8A04F3D31E436446000AF27E /* PostImageCell.xib */,
 				8A178EE01E4240FC00EA4ED5 /* PostViewController.storyboard */,
 			);
 			name = views;
@@ -784,6 +790,7 @@
 				8A5D89B31E36776600DB4EDB /* PostCollectionViewCell.xib in Resources */,
 				8AA77A721E39079200A692FE /* ImageDetailViewController.storyboard in Resources */,
 				8A442C471E33C3D50021E1E6 /* LoginViewController.storyboard in Resources */,
+				8A04F3D41E436446000AF27E /* PostImageCell.xib in Resources */,
 				F6E4DB641E2FD1C500C5B84F /* TabViewController.storyboard in Resources */,
 				8A5D89B11E3675C600DB4EDB /* PostCollectionViewController.storyboard in Resources */,
 				8AA77A851E3D7F5E00A692FE /* TextFieldCell.xib in Resources */,
@@ -890,6 +897,7 @@
 				8A5D89AF1E3675A200DB4EDB /* PostCollectionViewController.swift in Sources */,
 				8AA77A831E3D7F4500A692FE /* TextFieldCell.swift in Sources */,
 				8AA77A761E3C794C00A692FE /* SettingsViewController.swift in Sources */,
+				8A04F3D21E43642F000AF27E /* PostImageCell.swift in Sources */,
 				8AB98E791E344F9B004AE92D /* UIImageView.swift in Sources */,
 				8A5D89B71E36791600DB4EDB /* UICollectionView.swift in Sources */,
 				F6E4DB6C1E2FDDBD00C5B84F /* PostListCell.swift in Sources */,
