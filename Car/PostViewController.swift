@@ -16,13 +16,11 @@ class PostViewController: UIViewController, StoryboardInstantiatable {
 
   private let bag = DisposeBag.init()
 
-  @IBOutlet private weak var tableView: UITableView! {
-    didSet {
-      vm.asObservable().filterNil().subscribe(onNext: { (vm) in
-
-      }).addDisposableTo(bag)
-    }
-  }
+  @IBOutlet private weak var tableView: UITableView!
 
   let vm = Variable<PostViewModel?>.init(nil)
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
 }

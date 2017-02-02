@@ -14,8 +14,23 @@ import Models
 import TwitterService
 
 class PostViewModel {
+  typealias Item = PostEntity
+
   let dataSource = RxTableViewSectionedReloadDataSource<Section>.init()
-  let context = Variable<Context?>.init(nil)
+  private let context: Context
+
+  var rows = Observable<[Section]>.just([Section.init(items: [.images, .main, .control])])
+
+  init(context: Context) {
+    self.context = context
+
+    dataSource.configureCell = { (dataSource, tableView, indexPath, row) -> UITableViewCell in
+      switch dataSource[indexPath] {
+      default:
+        fatalError()
+      }
+    }
+  }
 }
 
 extension PostViewModel {
@@ -32,7 +47,7 @@ extension PostViewModel {
       }
     }
 
-    var content: Observable<PostEntity> {
+    var content: Observable<Item> {
       let apiObservable = TwitterRepository.getTweet(id: id)
       switch self {
       case .id:
