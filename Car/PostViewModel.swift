@@ -26,8 +26,13 @@ class PostViewModel {
 
     dataSource.configureCell = { (dataSource, tableView, indexPath, row) -> UITableViewCell in
       switch dataSource[indexPath] {
+      case .images:
+        let cell: PostImageCell = tableView.dequeueCell(for: indexPath)
+        return cell
       default:
-        fatalError()
+        let cell = UITableViewCell.init()
+        cell.contentView.backgroundColor = UIColor.cyan
+        return cell
       }
     }
   }
