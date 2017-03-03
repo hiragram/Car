@@ -53,6 +53,7 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
     super.viewDidLoad()
 
     vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
+      self.tableView.dataSource = nil
       vm.itemContainer.items
         .bindTo(self.tableView.rx.items(cellType: PostListCell.self)) { [weak self] (row: Int, item: PostEntity, cell: PostListCell) in
           cell.setup(entity: item)
