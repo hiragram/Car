@@ -24,10 +24,13 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
 
       tableView.rx.modelSelected(PostListViewModel.Item.self).subscribe(onNext: { [weak self] (item) in
-        self?.show(PostViewController.self, sender: nil, configuration: { (vc) in
-          let vm = PostViewModel.init(context: .entity(item))
-          vc.vm.value = vm
-        })
+        switch Deeplink.Twitter.tweet(fromUser: item.user.username, forID: item.id) {
+        case .app(url: let url):
+          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        case .safari(url: let url):
+          let safari = SFSafariViewController.init(url: url)
+          self?.show(safari, sender: nil)
+        }
       }).addDisposableTo(bag)
 
       tableView.rx.itemSelected.asObservable().subscribe(onNext: { [weak self] (indexPath) in

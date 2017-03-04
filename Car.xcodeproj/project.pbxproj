@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6010D16A1E6A7800007C1D24 /* Deeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6010D1691E6A7800007C1D24 /* Deeplink.swift */; };
 		8A04F3D21E43642F000AF27E /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A04F3D11E43642F000AF27E /* PostImageCell.swift */; };
 		8A04F3D41E436446000AF27E /* PostImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A04F3D31E436446000AF27E /* PostImageCell.xib */; };
 		8A178ED81E3DF91000EA4ED5 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A178ED71E3DF91000EA4ED5 /* Search.swift */; };
@@ -181,6 +182,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6010D1691E6A7800007C1D24 /* Deeplink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deeplink.swift; sourceTree = "<group>"; };
 		8A04F3D11E43642F000AF27E /* PostImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
 		8A04F3D31E436446000AF27E /* PostImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageCell.xib; sourceTree = "<group>"; };
 		8A178ED71E3DF91000EA4ED5 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				F6E4DB501E2D0DCD00C5B84F /* extensions */,
 				F6E4DB221E2D0C9E00C5B84F /* AppDelegate.swift */,
 				8AA77A731E3A57E800A692FE /* Permission.swift */,
+				6010D1691E6A7800007C1D24 /* Deeplink.swift */,
 				F6E4DB291E2D0C9E00C5B84F /* Assets.xcassets */,
 				F6E4DB2B1E2D0C9E00C5B84F /* LaunchScreen.storyboard */,
 				F6E4DB2E1E2D0C9E00C5B84F /* Info.plist */,
@@ -900,6 +903,7 @@
 				8A04F3D21E43642F000AF27E /* PostImageCell.swift in Sources */,
 				8AB98E791E344F9B004AE92D /* UIImageView.swift in Sources */,
 				8A5D89B71E36791600DB4EDB /* UICollectionView.swift in Sources */,
+				6010D16A1E6A7800007C1D24 /* Deeplink.swift in Sources */,
 				F6E4DB6C1E2FDDBD00C5B84F /* PostListCell.swift in Sources */,
 				8A178EDF1E4240D800EA4ED5 /* PostViewController.swift in Sources */,
 				F6E4DBA21E2FED9600C5B84F /* UITableView.swift in Sources */,

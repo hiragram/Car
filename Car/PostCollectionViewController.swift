@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RxOptional
 import Models
+import SafariServices
 
 class PostCollectionViewController: UIViewController, StoryboardInstantiatable {
 
@@ -19,6 +20,15 @@ class PostCollectionViewController: UIViewController, StoryboardInstantiatable {
   @IBOutlet private weak var collectionView: UICollectionView! {
     didSet {
       collectionView.register(nibWithType: PostCollectionViewCell.self)
+      collectionView.rx.modelSelected(PostEntity.self).subscribe(onNext: { (item) in
+        switch Deeplink.Twitter.tweet(fromUser: item.user.username, forID: item.id) {
+        case .app(url: let url):
+          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        case .safari(url: let url):
+          let safari = SFSafariViewController.init(url: url)
+          self.show(safari, sender: nil)
+        }
+      }).addDisposableTo(bag)
 
       vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
         vm.itemContainer.items.bindTo(self.collectionView.rx.items(cellType: PostCollectionViewCell.self)) { number, item, cell in
@@ -31,10 +41,9 @@ class PostCollectionViewController: UIViewController, StoryboardInstantiatable {
           }.subscribe().addDisposableTo(vm.bag)
         vm.isLoading.bindTo(refreshControl.rx.isRefreshing).addDisposableTo(vm.bag)
         self.collectionView.refreshControl = refreshControl
-
       }).addDisposableTo(bag)
 
-      collectionView.delegate = self
+      collectionView.rx.setDelegate(self).addDisposableTo(bag)
     }
   }
 
