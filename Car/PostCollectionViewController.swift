@@ -31,6 +31,7 @@ class PostCollectionViewController: UIViewController, StoryboardInstantiatable {
       }).addDisposableTo(bag)
 
       vm.asObservable().filterNil().subscribe(onNext: { [unowned self] (vm) in
+        self.collectionView.dataSource = nil
         vm.itemContainer.items.bindTo(self.collectionView.rx.items(cellType: PostCollectionViewCell.self)) { number, item, cell in
           cell.setup(entity: item)
         }.addDisposableTo(self.bag)
@@ -48,7 +49,6 @@ class PostCollectionViewController: UIViewController, StoryboardInstantiatable {
   }
 
   var vm = Variable<PostListViewModel?>.init(nil)
-
 
 }
 

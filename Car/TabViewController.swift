@@ -22,11 +22,19 @@ final class TabViewController: UITabBarController, StoryboardInstantiatable {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    UITabBar.appearance().tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+    UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+
     let table = PostListViewController.instantiateFromStoryboard()
     let tableNavigation = UINavigationController.init(rootViewController: table)
+    table.tabBarItem = UITabBarItem.init(title: "コメント付き", image: #imageLiteral(resourceName: "ListTabIconDisabled"), selectedImage: #imageLiteral(resourceName: "ListTabIconEnabled"))
+    table.tabBarItem.imageInsets = UIEdgeInsets.init(top: 20, left: 20, bottom: 20, right: 20)
+
 
     let grid = PostCollectionViewController.instantiateFromStoryboard()
     let gridNavigation = UINavigationController.init(rootViewController: grid)
+    grid.tabBarItem = UITabBarItem.init(title: "グリッド", image: #imageLiteral(resourceName: "CollectionTabIconDisabled"), selectedImage: #imageLiteral(resourceName: "CollectionTabIconEnabled"))
+    grid.tabBarItem.imageInsets = UIEdgeInsets.init(top: 20, left: 20, bottom: 20, right: 20)
 
     tableViewController = table
     gridViewController = grid
