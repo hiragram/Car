@@ -15,6 +15,7 @@ import Models
 final class LoginViewController: UIViewController, StoryboardInstantiatable {
   @IBOutlet private weak var loginButton: TWTRLogInButton! {
     didSet {
+      loginButton.loginMethods = .webBasedForceLogin
       loginButton.logInCompletion = { [weak self] session, error in
         guard let session = session else {
           print(error)

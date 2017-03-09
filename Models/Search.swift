@@ -26,9 +26,8 @@ public struct Search {
 
   private static var textSubject: ReplaySubject<String?> = { _ -> ReplaySubject<String?> in
     let sub = ReplaySubject<String?>.create(bufferSize: 1)
-    if let savedText = UserDefaults.standard.value(forKey: searchTextKey) as? String {
-      sub.onNext(savedText)
-    }
+    let savedText = UserDefaults.standard.value(forKey: searchTextKey) as? String
+    sub.onNext(savedText)
     return sub
   }()
 

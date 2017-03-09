@@ -82,6 +82,20 @@ final class PostListViewController: UIViewController, StoryboardInstantiatable {
 
     }).addDisposableTo(bag)
 
+    Search.text.asObservable().subscribe(onNext: { (str) in
+      print(str)
+    }).addDisposableTo(bag)
+
+    Observable.combineLatest(Auth.stateObservable, Search.text.filter { $0 == nil }) { (authState, _) -> Auth.State in
+      return authState
+    }.subscribe(onNext: { [weak self] (state) in
+      switch state {
+      case .authorized:
+        self?.present(UINavigationController.init(rootViewControllerType: SettingsViewController.self), animated: true)
+      default:
+        break
+      }
+    }).addDisposableTo(bag)
 
     switch traitCollection.forceTouchCapability {
     case .available:
